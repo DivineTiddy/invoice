@@ -1,17 +1,17 @@
 import React from "react";
-import { RocketIcon } from "../ui/customizeIcon";
+import { BussinessContentTypes } from "@/types/Types";
 
-const BusinessCard = () => {
+const BusinessCard = ({ title, description, icon  }: BussinessContentTypes) => {
   return (
-    <div className="flex flex-col items-center border-[1px] border-[#D5D5D5] rounded-[16px] p-[32px]">
-      <div className="p-4 rounded-[8px] border-[1px] border-[#A5EDD6]  bg-[#248567]">
-        <RocketIcon />
+    <div className="group cursor-pointer flex flex-col items-center border border-[#D5D5D5] rounded-[16px] p-[32px] hover:bg-[#248567] hover:border-none transition-all duration-300">
+      <div className="bg-[#248567] group-hover:bg-[#F2FFFB] transition-all duration-300 p-4 rounded-[8px] border border-[#A5EDD6]">
+        {icon}
       </div>
-      <h2 className="mt-[24px] text-[#242424] font-bold text-xl text-center">
-        Simple and Fast
+      <h2 className="mt-6 text-[#242424] font-bold text-xl text-center group-hover:text-[#EEEEEEEE] transition-all duration-300">
+        {title}
       </h2>
-      <p className="mt-5 text-[#777777] font-normal text-base text-center w-[70%]">
-        No complicated steps, generate your invoice in minutes
+      <p className="mt-5 text-[#777777] font-normal text-base text-center w-[70%] group-hover:text-[#EAEAEAEE] transition-all duration-300">
+        {description}
       </p>
     </div>
   );

@@ -2,7 +2,61 @@ import React from "react";
 import HomeDesktopNav from "../nav/HomeDesktopNav";
 import Image from "next/image";
 import BusinessCard from "../cards/BusinessCard";
+import {
+  DataIcon,
+  DownLoadIcon,
+  OutlineIcon,
+  PaymentIcon,
+  RocketIcon,
+  TaxIcon,
+} from "../ui/customizeIcon";
 
+const bussinessContent = [
+  {
+    title: "Simple and Fast",
+    description: "No complicated steps, generate your invoice in minutes",
+    icon: (
+      <RocketIcon className="text-[#F2F2F2] group-hover:text-[#248567] transition-colors duration-300" />
+    ),
+  },
+  {
+    title: "Local & International Payment",
+    description: "Invoice clients in Naira, Dollars, Euro, Pounds and more.",
+    icon: (
+      <PaymentIcon className="text-[#F2F2F2] group-hover:text-[#248567] transition-colors duration-300" />
+    ),
+  },
+  {
+    title: "Custom Branding",
+    description:
+      "Add your logo, business details and personalize our invoices.",
+    icon: (
+      <OutlineIcon className="text-[#F2F2F2] group-hover:text-[#248567] transition-colors duration-300" />
+    ),
+  },
+  {
+    title: "Tax Support",
+    description: "Handle VAT and other tax deductions with ease.",
+    icon: (
+      <TaxIcon className="text-[#F2F2F2] group-hover:text-[#248567] transition-colors duration-300" />
+    ),
+  },
+  {
+    title: "Instant PDF Download",
+    description:
+      "Download print or share your invoice directly with your client.",
+    icon: (
+      <DownLoadIcon className="text-[#F2F2F2] group-hover:text-[#248567] transition-colors duration-300" />
+    ),
+  },
+  {
+    title: "Safe & Secure",
+    description: "Your data is protected with top level security",
+    icon: (
+      <DataIcon className="text-[#F2F2F2] group-hover:text-[#248567] transition-colors duration-300" />
+    ),
+  },
+];
 const HomePage = () => {
   return (
     <>
@@ -43,15 +97,33 @@ const HomePage = () => {
           </div>
         </section>
       </header>
-      <main className="bg-[#FDFDFD] w-full h-[700px] p-[120px]">
-        <h1 className="text-[42px] font-bold text-center text-[#242424] leading-12">
-          Built For Every <br /> Business and Services
-        </h1>
-        <div className="mt-[73px] grid grid-cols-3 gap-[28px]">
-          <BusinessCard />
-          <BusinessCard />
-          <BusinessCard />
-        </div>
+      <main className="">
+        <section className="bg-[#FDFDFD] w-full  p-[120px]">
+          <h1 className="text-[42px] font-bold text-center text-[#242424] leading-12">
+            Built For Every <br /> Business and Services
+          </h1>
+          <div className="mt-[73px] grid grid-cols-3 gap-[28px]">
+            {bussinessContent.map((item, index) => (
+              <BusinessCard
+                key={index + 1}
+                title={item.title}
+                description={item.description}
+                icon={item.icon}
+              />
+            ))}
+          </div>
+        </section>
+        <section className="w-full h-[500px]">
+          <div className="bg-[#248567] w-[50%] p-[112px]">
+            <h1 className="text-[#EFEFEF] font-bold text-5xl leading-18">
+              Works for All Types of <br /> Business.{" "}
+            </h1>
+            <p className="text-[#DFDFDF] font-normal text-base mt-[24px]">
+              Whatever business or services you provide, you <br/>can invoice your
+              client like a pro
+            </p>
+          </div>
+        </section>
       </main>
     </>
   );

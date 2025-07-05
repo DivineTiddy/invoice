@@ -226,7 +226,7 @@ const HomePage = () => {
       <footer className="w-full mt-[40px]">
         <section className="bg-[#043325] flex flex-col gap-3 items-center py-[70px]">
           <h1 className="text-[#EAEAEA] font-bold text-5xl">
-            Get paid faster!
+            Get paid faster.
           </h1>
           <p className="text-[#EAEAEA] font-normal text-xl">
             Start invoicing today

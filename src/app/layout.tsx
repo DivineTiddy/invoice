@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        style={{ zoom: 0.7 }}
+        style={{ zoom: 0.8 }}
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         {children}

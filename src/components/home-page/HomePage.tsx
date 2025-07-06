@@ -80,7 +80,7 @@ const HomePage = () => {
             />
             <p className="text-[#767676] font-normal text-xs">Fast and free</p>
           </div>
-          <h1 className="text-[#242424] mt-2 font-semibold text-[60px] text-center leading-14">
+          <h1 className="text-[#242424] mt-2 font-bold text-[60px] text-center leading-14">
             Generate Free <br /> Instant Pro Invoice
           </h1>
           <p className="text-[#5E5E5E] font-normal mt-5 text-center text-base w-[23%]">
@@ -162,7 +162,7 @@ const HomePage = () => {
             />
           </div>
           <div>
-            <h1 className="text-[#242424] font-black text-5xl leading-16">
+            <h1 className="text-[#242424]  font-bold text-5xl leading-14">
               Trusted by <br /> Freelancers, SME’s <br /> and Businesses across{" "}
               Nigeria.
             </h1>

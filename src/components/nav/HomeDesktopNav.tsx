@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const HomeDesktopNav = () => {
   return (
@@ -16,9 +17,12 @@ const HomeDesktopNav = () => {
         <p className="cursor-pointer text-[#242424] font-semibold text-lg">
           Login
         </p>
-        <button className="cursor-pointer py-4 px-6 bg-[#248567] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] rounded-[8px] font-semibold text-lg text-[#EFFFFA]">
+        <Link
+          href="/dashboard"
+          className="cursor-pointer py-4 px-6 bg-[#248567] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] rounded-[8px] font-semibold text-lg text-[#EFFFFA]"
+        >
           Generate Invoice
-        </button>
+        </Link>
       </div>
     </nav>
   );

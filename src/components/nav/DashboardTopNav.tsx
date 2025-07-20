@@ -3,10 +3,10 @@ import React from "react";
 
 const DashboardTopNav = () => {
   return (
-    <div className="bg-[#FDFDFD] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] py-[14px] px-[24px] rounded-[32px] flex items-center justify-between">
+    <div className="  bg-[#FDFDFD] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] py-[14px] px-[24px] rounded-[32px] flex items-center justify-between">
       <div className="flex gap-[10px] items-center">
         <Image src="\image\logo.svg" alt="image" width={50} height={50} />
-        <h2 className="font-bold text-2xl text-[#248567]">JUSTINVOICE</h2>
+        <h2 className="font-bold text-2xl text-[#248567] font-sans">JUSTINVOICE</h2>
       </div>
       <div className="flex items-center gap-[48px]">
         <Image

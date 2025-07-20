@@ -1,0 +1,250 @@
+"use client";
+
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import React, { useState } from "react";
+import { Input } from "../input/Input";
+import Image from "next/image";
+
+type ProductRow = {
+  id: number;
+  product: string;
+  qty: string;
+  rate: string;
+  tax: string;
+};
+
+const ProductTable = () => {
+  const [rows, setRows] = useState<ProductRow[]>([
+    {
+      id: Date.now(),
+      product: "",
+      qty: "1",
+      rate: "",
+      tax: "",
+    },
+  ]);
+
+  const [discount, setDiscount] = useState<string>("");
+  const [amountPaid, setAmountPaid] = useState<string>("");
+
+  const addNewLine = (): void => {
+    setRows((prev) => [
+      ...prev,
+      {
+        id: Date.now(),
+        product: "",
+        qty: "1",
+        rate: "",
+        tax: "",
+      },
+    ]);
+  };
+
+  const deleteLine = (id: number): void => {
+    setRows((prev) => prev.filter((row) => row.id !== id));
+  };
+
+  const handleChange = (
+    id: number,
+    field: keyof ProductRow,
+    value: string
+  ): void => {
+    setRows((prev) =>
+      prev.map((row) =>
+        row.id === id
+          ? {
+              ...row,
+              [field]: value,
+            }
+          : row
+      )
+    );
+  };
+
+  const computeAmount = (row: ProductRow): string => {
+    const qty = parseFloat(row.qty) || 0;
+    const rate = parseFloat(row.rate) || 0;
+    const tax = parseFloat(row.tax) || 0;
+    const amount = qty * rate * (1 + tax / 100);
+    return amount.toFixed(2);
+  };
+
+  const computeSubtotal = (): number => {
+    return rows.reduce((total, row) => {
+      const qty = parseFloat(row.qty) || 0;
+      const rate = parseFloat(row.rate) || 0;
+      const tax = parseFloat(row.tax) || 0;
+      const amount = qty * rate * (1 + tax / 100);
+      return total + amount;
+    }, 0);
+  };
+
+  const computeDiscountValue = (): number => {
+    const subtotal = computeSubtotal();
+    const d = parseFloat(discount) || 0;
+    return d > 100 ? d : (subtotal * d) / 100;
+  };
+
+  const computeBalanceDue = (): number => {
+    const subtotal = computeSubtotal();
+    const discountValue = computeDiscountValue();
+    const paid = parseFloat(amountPaid) || 0;
+    return subtotal - discountValue - paid;
+  };
+
+  return (
+    <>
+      <Table>
+        <TableHeader>
+          <TableRow className="border-0 bg-[#EEEEEE] text-[#444444] font-bold text-base py-3">
+            <TableHead>Product</TableHead>
+            <TableHead>Qty</TableHead>
+            <TableHead>Rate</TableHead>
+            <TableHead>Tax</TableHead>
+            <TableHead>Amount</TableHead>
+            <TableHead></TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.id} className="text-[#242424] font-normal text-base">
+              <TableCell className="w-[350px]">
+                <Input
+                  className="w-[90%]"
+                  placeholder="Full Website Design and development"
+                  value={row.product}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleChange(row.id, "product", e.target.value)
+                  }
+                />
+              </TableCell>
+              <TableCell>
+                <Input
+                  className="w-[90%]"
+                  type="number"
+                  placeholder="1"
+                  value={row.qty}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleChange(row.id, "qty", e.target.value)
+                  }
+                />
+              </TableCell>
+              <TableCell>
+                <Input
+                  className="w-[90%]"
+                  type="number"
+                  placeholder="100"
+                  value={row.rate}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleChange(row.id, "rate", e.target.value)
+                  }
+                />
+              </TableCell>
+              <TableCell>
+                <div className="flex items-center gap-3 w-[90%] outline-0 font-normal text-base text-[#242424] rounded-[8px] p-2.5 border-[1px] border-[#E4E4E4]">
+                  <input
+                    type="number"
+                    className="w-[90%] h-full outline-0 border-0"
+                    placeholder="5"
+                    value={row.tax}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      handleChange(row.id, "tax", e.target.value)
+                    }
+                  />
+                  %
+                </div>
+              </TableCell>
+              <TableCell>
+                <Input
+                  className="w-[90%] bg-gray-100 cursor-not-allowed"
+                  value={`₦${computeAmount(row)}`}
+                  disabled
+                />
+              </TableCell>
+              <TableCell>
+                <Image
+                  src="/icon/delete.svg"
+                  alt="delete"
+                  width={24}
+                  height={24}
+                  className="cursor-pointer"
+                  onClick={() => deleteLine(row.id)}
+                />
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+
+      <span
+        onClick={addNewLine}
+        className="mt-4 w-[143px] flex items-center gap-2.5 text-[#248567] cursor-pointer font-bold text-sm border-[1px] border-[#EAEAEA] p-2.5 rounded-[8px]"
+      >
+        <Image src="/icon/plus.svg" alt="add" width={20} height={20} />
+        Add New Line
+      </span>
+
+      <section className="mt-[32px]">
+        <div className="flex items-start justify-between">
+          <div className="flex w-[30%] flex-col gap-5">
+            <label className="text-[#444444] font-bold text-base">Note/Conditions</label>
+            <textarea
+              placeholder="Leave a note..."
+              className="bg-[#FDFDFD] rounded-[8px] py-2.5 px-4 border-[1px] border-[#E4E4E4]"
+            />
+          </div>
+
+          <div className="space-y-3.5 w-[30%]">
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-[#767676] font-normal text-base">Subtotal</p>
+              <Input
+                className="w-[60%] border-none"
+                value={`₦${computeSubtotal().toFixed(2)}`}
+                disabled
+              />
+            </div>
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-[#767676] font-normal text-base">Discount</p>
+              <Input
+                className="w-[60%]"
+                placeholder="e.g. 10 or 1000"
+                value={discount}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setDiscount(e.target.value)
+                }
+              />
+            </div>
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-[#767676] font-normal text-base">Amount Paid</p>
+              <Input
+                className="w-[60%]"
+                placeholder="e.g. 5000"
+                value={amountPaid}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setAmountPaid(e.target.value)
+                }
+              />
+            </div>
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-[#767676] font-normal text-base">Balance Due</p>
+              <Input
+                className="w-[60%] text-[#248567] font-semibold text-xl border-none"
+                disabled
+                value={`₦${computeBalanceDue().toFixed(2)}`}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default ProductTable;

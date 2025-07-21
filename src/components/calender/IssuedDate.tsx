@@ -34,7 +34,7 @@ export const IssuedDate: React.FC<ProductTableProps> = ({ setInvioceData }) => {
         <PopoverTrigger asChild>
           <button
             id="date"
-            className="cursor-pointer flex justify-between items-center w-[300px] outline-0 font-normal text-base text-[#A7A7A7] bg-[#FDFDFD] rounded-[8px] p-2.5 border-[1px] border-[#E4E4E4] focus:border-[#248567]"
+            className="cursor-pointer flex justify-between items-center w-full md:w-[300px] outline-0 font-normal text-base text-[#A7A7A7] bg-[#FDFDFD] rounded-[8px] p-2.5 border-[1px] border-[#E4E4E4] focus:border-[#248567]"
           >
             {`${String(date.getDate()).padStart(2, "0")} - ${String(
               date.getMonth() + 1

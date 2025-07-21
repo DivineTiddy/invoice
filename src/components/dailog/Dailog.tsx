@@ -14,7 +14,7 @@ export function PreviewDailog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="bg-[#248567] cursor-pointer py-4 px-6 rounded-[8px] text-[#EFFFFA] font-semibold text-base">
+        <button className="bg-[#248567] cursor-pointer py-4 px-4 md:px-6 rounded-[8px] text-[#EFFFFA] font-semibold text-base">
           Generate Invoice
         </button>
       </DialogTrigger>

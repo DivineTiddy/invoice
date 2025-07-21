@@ -9,11 +9,11 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="px-[150px] py-[20px] bg-[#F2F2F2] min-h-screen">
-      <div className="fixed top-0 left-0 right-0 px-[150px] z-50">
+    <div className=" md:px-[20px] xl:px-[150px] py-[20px] bg-[#F2F2F2] min-h-screen">
+      <div className="fixed top-0 left-0 right-0  md:px-[20px] xl:px-[150px] z-50">
         <DashboardTopNav />
       </div>
-      <div className="flex gap-3 w-full h-full mt-[90px]">
+      <div className="flex gap-3 w-full h-full mt-[70px] md:mt-[90px]">
         <DashboardSideNav />
         <div className="flex-1">{children}</div>
       </div>

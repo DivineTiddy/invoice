@@ -15,6 +15,7 @@ import { InvoiceData, ProductRow } from "@/types/Types";
 
 // Props definition for ProductTable component
 type ProductTableProps = {
+  invoiceType: "Product" | "Service";
   setInvioceData: React.Dispatch<React.SetStateAction<InvoiceData>>;
 };
 
@@ -22,7 +23,10 @@ type ProductTableProps = {
  * ProductTable component manages dynamic line items for an invoice.
  * Handles product entry, calculations (tax, subtotal, balance), and updates the parent state.
  */
-const ProductTable: React.FC<ProductTableProps> = ({ setInvioceData }) => {
+const ProductTable: React.FC<ProductTableProps> = ({
+  setInvioceData,
+  invoiceType,
+}) => {
   // Line items state
   const [rows, setRows] = useState<ProductRow[]>([
     {
@@ -33,6 +37,8 @@ const ProductTable: React.FC<ProductTableProps> = ({ setInvioceData }) => {
       tax: "",
     },
   ]);
+
+  const numberOfRows = rows.length;
 
   // Form-specific state fields
   const [discount, setDiscount] = useState<string>("");
@@ -132,7 +138,6 @@ const ProductTable: React.FC<ProductTableProps> = ({ setInvioceData }) => {
   const subtotal = computeSubtotal();
   const balance = computeBalanceDue();
 
-
   /**
    * Syncs local state (products, discount, payment, note) with parent invoice state.
    */
@@ -154,7 +159,9 @@ const ProductTable: React.FC<ProductTableProps> = ({ setInvioceData }) => {
       <Table>
         <TableHeader>
           <TableRow className="border-0 bg-[#EEEEEE] text-[#444444] font-bold text-base py-3">
-            <TableHead>Product</TableHead>
+            <TableHead>
+              {numberOfRows ? numberOfRows : "#"} {invoiceType}
+            </TableHead>
             <TableHead>Qty</TableHead>
             <TableHead>Rate</TableHead>
             <TableHead>Tax</TableHead>
@@ -244,19 +251,19 @@ const ProductTable: React.FC<ProductTableProps> = ({ setInvioceData }) => {
       </Table>
 
       {/* Add new product row button */}
-      <span
+      <button
         onClick={addNewLine}
-        className="mt-4 w-[243px] flex items-center gap-2.5 text-[#248567] cursor-pointer font-bold text-sm border-[1px] border-[#EAEAEA] p-2.5 rounded-[8px]"
+        className="mt-4 w-[170px] md:w-[243px] flex items-center outline-0 gap-2.5 text-[#248567] cursor-pointer font-bold text-sm border-[1px] border-[#EAEAEA] p-2.5 rounded-[8px]"
       >
         <Image src="/icon/plus.svg" alt="add" width={20} height={20} />
         Add New Line
-      </span>
+      </button>
 
       {/* Invoice Summary Section */}
-      <section className="mt-[32px]">
-        <div className="flex items-start justify-between">
+      <section className="mt-6 md:mt-[32px]">
+        <div className="flex flex-col-reverse md:items-start md:justify-between">
           {/* Notes or terms */}
-          <div className="flex w-[30%] flex-col gap-5">
+          <div className="flex md:w-[30%] flex-col gap-5">
             <label className="text-[#444444] font-bold text-base">
               Note/Conditions
             </label>
@@ -268,12 +275,12 @@ const ProductTable: React.FC<ProductTableProps> = ({ setInvioceData }) => {
           </div>
 
           {/* Pricing Summary */}
-          <div className="space-y-3.5 w-[30%]">
-            <div className="flex items-center justify-between gap-3">
+          <div className="space-y-3.5 md:w-[30%]">
+            <div className="flex items-center justify-between gap-3 ">
               <p className="text-[#767676] font-normal text-base">Subtotal</p>
               <Input
                 placeholder="0.00"
-                className="w-[60%] border-none"
+                className="text-end md:text-start md:w-[60%] border-none"
                 value={`₦${subtotal.toFixed(2)}`}
                 disabled
               />
@@ -282,7 +289,7 @@ const ProductTable: React.FC<ProductTableProps> = ({ setInvioceData }) => {
             <div className="flex items-center justify-between gap-3">
               <p className="text-[#767676] font-normal text-base">Discount</p>
               <Input
-                className="w-[60%]"
+                className=" w-[120px] md:w-[60%]"
                 placeholder="0.00"
                 value={discount}
                 onChange={(e) => setDiscount(e.target.value)}
@@ -294,7 +301,7 @@ const ProductTable: React.FC<ProductTableProps> = ({ setInvioceData }) => {
                 Amount Paid
               </p>
               <Input
-                className="w-[60%]"
+                className=" w-[120px] md:w-[60%]"
                 placeholder="0.00"
                 value={amountPaid}
                 onChange={(e) => setAmountPaid(e.target.value)}
@@ -306,7 +313,7 @@ const ProductTable: React.FC<ProductTableProps> = ({ setInvioceData }) => {
                 Balance Due
               </p>
               <Input
-                className="w-[60%] text-[#248567] font-semibold text-xl border-none"
+                className=" text-end md:text-start md:w-[60%] text-[#248567] font-semibold text-xl border-none"
                 disabled
                 value={`₦${balance.toFixed(2)}`}
               />

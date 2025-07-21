@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 
 // Custom components
 import { DueDate } from "../calender/DueDate";
@@ -19,7 +19,9 @@ import LogoUploader from "./LogoUpload";
  * invoice dates, currency selection, and a list of invoice items.
  */
 const Index = () => {
-
+  const [invoiceType, setInvoiceType] = useState<"Product" | "Service">(
+    "Product"
+  );
 
   // Initialize invoice state with default values
   const [invioceData, setInvioceData] = useState<InvoiceData>({
@@ -54,28 +56,42 @@ const Index = () => {
   const handleRefresh = () => {};
 
   return (
-    <div className="w-full bg-[#FDFDFD] py-10 px-[52px] rounded-[16px]">
+    <div className="w-full bg-[#FDFDFD] py-6 md:py-10 px-[20px] lg:px-[52px] rounded-[16px]">
       {/* Page Heading */}
       <h1 className="text-[#444444] font-bold text-xl">Invoice Details</h1>
 
       {/* Toggle for invoice type (Product or Services) */}
-      <div className="w-[500px] flex items-center rounded-[12px] gap-2 bg-[#EAEAEA] mt-6 p-1.5 font-normal text-base">
-        <button className="w-full text-[#777777] cursor-pointer outline-0 py-3 px-4">
+      <div className=" md:w-[500px] flex items-center rounded-[12px] gap-2 bg-[#EAEAEA] mt-6 p-1.5 font-normal text-base">
+        <button
+          onClick={() => setInvoiceType("Product")}
+          className={`w-full text-[#777777] cursor-pointer outline-0 py-3 px-4 transition-all duration-300 ${
+            invoiceType === "Product"
+              ? "bg-[#FDFDFD] rounded-[6px] text-[#444444] "
+              : "text-[#777777] "
+          }`}
+        >
           For Product
         </button>
-        <button className="w-full bg-[#FDFDFD] rounded-[6px] text-[#444444] cursor-pointer outline-0 py-3 px-4">
+        <button
+          onClick={() => setInvoiceType("Service")}
+          className={`w-full  cursor-pointer outline-0 py-3 px-4 transition-all duration-300 ${
+            invoiceType === "Service"
+              ? "bg-[#FDFDFD] rounded-[6px] text-[#444444] "
+              : "text-[#777777] "
+          }`}
+        >
           For Services
         </button>
       </div>
 
       {/* Logo Upload Placeholder */}
-      <div className="mt-[53px]">
+      <div className=" mt-[30px] md:mt-[53px]">
         <h1 className="text-[#444444] font-bold text-base">Company’s Logo</h1>
-       <LogoUploader/>
+        <LogoUploader />
 
         {/* Invoice Header Info (Subject & Invoice Number) */}
-        <section className="flex items-center mt-[36px] gap-14">
-          <div className="flex flex-col gap-5">
+        <section className=" flex flex-col-reverse md:flex-row md:items-center mt-6 md:mt-[36px] gap-6 md:gap-14">
+          <div className="flex flex-col gap-2 md:gap-5">
             <Lable title="Subject" />
             <Input
               value={invioceData.subject}
@@ -85,11 +101,11 @@ const Index = () => {
                   subject: e.target.value,
                 }))
               }
-              className="w-[450px]"
+              className=" md:w-[450px]"
               placeholder="Design Job"
             />
           </div>
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-2 md:gap-5">
             <Lable title=" Invoice No." />
             <Input
               value={invioceData.invoiceNo}
@@ -99,15 +115,15 @@ const Index = () => {
                   invoiceNo: e.target.value,
                 }))
               }
-              className="w-[220px]"
+              className=" w-[100px] md:w-[220px]"
               placeholder="01"
             />
           </div>
         </section>
 
         {/* Billing Information: From + Your Address */}
-        <section className="flex items-center mt-[36px] gap-14">
-          <div className="flex flex-col gap-5">
+        <section className=" flex flex-col md:flex-row md:items-center mt-6  md:mt-[36px] gap-6 md:gap-14">
+          <Chip>
             <Lable title="Bill From" />
             <Input
               value={invioceData.billfrom}
@@ -117,11 +133,11 @@ const Index = () => {
                   billfrom: e.target.value,
                 }))
               }
-              className="w-[450px]"
+              className="md:w-[450px]"
               placeholder="Justocean design agency"
             />
-          </div>
-          <div className="flex flex-col gap-5">
+          </Chip>
+          <Chip>
             <Lable title="Your Address" />
             <Input
               value={invioceData.yourAddress}
@@ -131,15 +147,15 @@ const Index = () => {
                   yourAddress: e.target.value,
                 }))
               }
-              className="w-[450px]"
+              className="md:w-[450px]"
               placeholder="6 Obafemi Street, Doga, Lag..."
             />
-          </div>
+          </Chip>
         </section>
 
         {/* Sender Contact Information */}
-        <section className="flex items-center mt-[36px] gap-14">
-          <div className="flex flex-col gap-5">
+        <section className=" flex flex-col md:flex-row md:items-center mt-6 md:mt-[36px] gap-6 md:gap-14">
+          <Chip>
             <Lable title="Email Address" />
             <Input
               value={invioceData.emailAddress}
@@ -149,11 +165,11 @@ const Index = () => {
                   emailAddress: e.target.value,
                 }))
               }
-              className="w-[450px]"
+              className="md:w-[450px]"
               placeholder="Business Email Address"
             />
-          </div>
-          <div className="flex flex-col gap-5">
+          </Chip>
+          <Chip>
             <Lable title="Phone Number" />
             <Input
               value={invioceData.yourPhoneNumber}
@@ -163,15 +179,15 @@ const Index = () => {
                   yourPhoneNumber: Number(e.target.value),
                 }))
               }
-              className="w-[450px]"
+              className="md:w-[450px]"
               placeholder="Business phone number"
             />
-          </div>
+          </Chip>
         </section>
 
         {/* Customer Information */}
-        <section className="flex items-center mt-[36px] gap-14">
-          <div className="flex flex-col gap-5">
+        <section className=" flex flex-col md:flex-row md:items-center mt-6 md:mt-[36px] gap-6 md:gap-14">
+          <Chip>
             <Lable title="Bill to" />
             <Input
               value={invioceData.billTo}
@@ -181,11 +197,11 @@ const Index = () => {
                   billTo: e.target.value,
                 }))
               }
-              className="w-[450px]"
+              className="md:w-[450px]"
               placeholder="Micheal Jones"
             />
-          </div>
-          <div className="flex flex-col gap-5">
+          </Chip>
+          <Chip>
             <Lable title="Customer Address" />
             <Input
               value={invioceData.clientAddress}
@@ -195,15 +211,15 @@ const Index = () => {
                   clientAddress: e.target.value,
                 }))
               }
-              className="w-[450px]"
+              className="md:w-[450px]"
               placeholder="10 Doncan Street, Doga, New York"
             />
-          </div>
+          </Chip>
         </section>
 
         {/* Customer Contact Details */}
-        <section className="flex items-center mt-[36px] gap-14">
-          <div className="flex flex-col gap-5">
+        <section className=" flex flex-col md:flex-row md:items-center mt-6 md:mt-[36px] gap-6 md:gap-14">
+          <Chip>
             <Lable title="Customer Email Address" />
             <Input
               value={invioceData.customerEmailAddress}
@@ -213,11 +229,11 @@ const Index = () => {
                   customerEmailAddress: e.target.value,
                 }))
               }
-              className="w-[450px]"
+              className="md:w-[450px]"
               placeholder="Customer Email Address"
             />
-          </div>
-          <div className="flex flex-col gap-5">
+          </Chip>
+          <Chip>
             <Lable title="Customer’s Phone Number" />
             <Input
               value={invioceData.customerPhoneNumber}
@@ -227,39 +243,42 @@ const Index = () => {
                   customerPhoneNumber: Number(e.target.value),
                 }))
               }
-              className="w-[450px]"
+              className="md:w-[450px]"
               placeholder="Customer’s Phone Number"
             />
-          </div>
+          </Chip>
         </section>
 
         {/* Invoice Dates */}
-        <section className="flex items-center mt-[36px] gap-[210px]">
-          <div className="flex flex-col gap-5">
+        <section className="flex flex-col md:flex-row md:items-center mt-6 gap-6 md:mt-[36px] md:gap-[210px]">
+          <Chip>
             <Lable title="Issued Date" />
             <IssuedDate setInvioceData={setInvioceData} />
-          </div>
-          <div className="flex flex-col gap-5">
+          </Chip>
+          <Chip>
             <Lable title="Due Date" />
             <DueDate setInvioceData={setInvioceData} />
-          </div>
+          </Chip>
         </section>
 
         {/* Currency Dropdown */}
-        <section className="flex items-center mt-[36px] gap-[210px]">
-          <div className="flex flex-col gap-5">
+        <section className="flex items-center mt-6 md:mt-[36px] gap-[210px]">
+          <Chip>
             <Lable title="Currency" />
             <SelectDropdown />
-          </div>
+          </Chip>
         </section>
 
         {/* Product / Service Table Section */}
-        <section className="mt-[32px] space-y-6">
-          <ProductTable setInvioceData={setInvioceData} />
+        <section className=" mt-6 md:mt-[32px] space-y-6">
+          <ProductTable
+            invoiceType={invoiceType}
+            setInvioceData={setInvioceData}
+          />
         </section>
 
         {/* Action Buttons */}
-        <section className="w-full flex gap-5 items-center mt-[52px] justify-end">
+        <section className="w-full flex gap-5 items-center mt-[52px] justify-between md:justify-end">
           {/* Refresh invoice form */}
           <button
             onClick={handleRefresh}
@@ -276,7 +295,7 @@ const Index = () => {
           </button>
 
           {/* Save draft without submission */}
-          <button className="bg-[#EFEFEF] cursor-pointer py-4 px-6 rounded-[8px] text-[#444444] font-semibold text-base">
+          <button className="bg-[#EFEFEF] cursor-pointer px-4 py-4 md:px-6 rounded-[8px] text-[#444444] font-semibold text-base">
             Save as draft
           </button>
 
@@ -296,4 +315,8 @@ export default Index;
  */
 const Lable = ({ title }: { title: string }) => {
   return <label className="text-[#444444] font-bold text-base">{title}</label>;
+};
+
+const Chip = ({ children }: { children: React.ReactNode }) => {
+  return <div className="flex flex-col gap-2 md:gap-5">{children}</div>;
 };

@@ -56,7 +56,7 @@ const Index = () => {
   const handleRefresh = () => {};
 
   return (
-    <div className="w-full bg-[#FDFDFD] py-6 md:py-10 px-[20px] lg:px-[52px] rounded-[16px]">
+    <div className="w-full bg-[#FDFDFD] py-6 md:py-10 px-[20px] lg:px-[52px] rounded-[16px] ">
       {/* Page Heading */}
       <h1 className="text-[#444444] font-bold text-xl">Invoice Details</h1>
 
@@ -85,7 +85,7 @@ const Index = () => {
       </div>
 
       {/* Logo Upload Placeholder */}
-      <div className=" mt-[30px] md:mt-[53px]">
+      <div className=" mt-[30px] md:mt-[53px] ">
         <h1 className="text-[#444444] font-bold text-base">Company’s Logo</h1>
         <LogoUploader />
 
@@ -101,7 +101,7 @@ const Index = () => {
                   subject: e.target.value,
                 }))
               }
-              className=" md:w-[450px]"
+              className=" md:w-[400px]"
               placeholder="Design Job"
             />
           </div>
@@ -133,7 +133,7 @@ const Index = () => {
                   billfrom: e.target.value,
                 }))
               }
-              className="md:w-[450px]"
+              className="md:w-[400px]"
               placeholder="Justocean design agency"
             />
           </Chip>
@@ -147,7 +147,7 @@ const Index = () => {
                   yourAddress: e.target.value,
                 }))
               }
-              className="md:w-[450px]"
+              className="md:w-[400px]"
               placeholder="6 Obafemi Street, Doga, Lag..."
             />
           </Chip>
@@ -165,7 +165,7 @@ const Index = () => {
                   emailAddress: e.target.value,
                 }))
               }
-              className="md:w-[450px]"
+              className="md:w-[400px]"
               placeholder="Business Email Address"
             />
           </Chip>
@@ -179,7 +179,7 @@ const Index = () => {
                   yourPhoneNumber: Number(e.target.value),
                 }))
               }
-              className="md:w-[450px]"
+              className="md:w-[400px]"
               placeholder="Business phone number"
             />
           </Chip>
@@ -197,7 +197,7 @@ const Index = () => {
                   billTo: e.target.value,
                 }))
               }
-              className="md:w-[450px]"
+              className="md:w-[400px]"
               placeholder="Micheal Jones"
             />
           </Chip>
@@ -211,7 +211,7 @@ const Index = () => {
                   clientAddress: e.target.value,
                 }))
               }
-              className="md:w-[450px]"
+              className="md:w-[400px]"
               placeholder="10 Doncan Street, Doga, New York"
             />
           </Chip>
@@ -229,7 +229,7 @@ const Index = () => {
                   customerEmailAddress: e.target.value,
                 }))
               }
-              className="md:w-[450px]"
+              className="md:w-[400px]"
               placeholder="Customer Email Address"
             />
           </Chip>
@@ -243,7 +243,7 @@ const Index = () => {
                   customerPhoneNumber: Number(e.target.value),
                 }))
               }
-              className="md:w-[450px]"
+              className="md:w-[400px]"
               placeholder="Customer’s Phone Number"
             />
           </Chip>
@@ -268,9 +268,10 @@ const Index = () => {
             <SelectDropdown />
           </Chip>
         </section>
+       
 
         {/* Product / Service Table Section */}
-        <section className=" mt-6 md:mt-[32px] space-y-6">
+        <section className=" mt-6 md:mt-[32px] space-y-6 w-full">
           <ProductTable
             invoiceType={invoiceType}
             setInvioceData={setInvioceData}

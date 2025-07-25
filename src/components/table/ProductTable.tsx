@@ -155,100 +155,107 @@ const ProductTable: React.FC<ProductTableProps> = ({
 
   return (
     <>
+ 
       {/* Main table for line items */}
-      <Table>
-        <TableHeader>
-          <TableRow className="border-0 bg-[#EEEEEE] text-[#444444] font-bold text-base py-3">
-            <TableHead>
-              {numberOfRows ? numberOfRows : "#"} {invoiceType}
-            </TableHead>
-            <TableHead>Qty</TableHead>
-            <TableHead>Rate</TableHead>
-            <TableHead>Tax</TableHead>
-            <TableHead>Amount</TableHead>
-            <TableHead></TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.id}
-              className="text-[#242424] font-normal text-base"
-            >
-              {/* Product name/description */}
-              <TableCell className="w-[350px]">
-                <Input
-                  className="w-[90%]"
-                  placeholder="Full Website Design and development"
-                  value={row.product}
-                  onChange={(e) =>
-                    handleChange(row.id, "product", e.target.value)
-                  }
-                />
-              </TableCell>
-
-              {/* Quantity */}
-              <TableCell>
-                <Input
-                  className="w-[90%]"
-                  type="number"
-                  placeholder="1"
-                  value={row.qty}
-                  onChange={(e) => handleChange(row.id, "qty", e.target.value)}
-                />
-              </TableCell>
-
-              {/* Rate per unit */}
-              <TableCell>
-                <Input
-                  className="w-[90%]"
-                  type="number"
-                  placeholder="0"
-                  value={row.rate}
-                  onChange={(e) => handleChange(row.id, "rate", e.target.value)}
-                />
-              </TableCell>
-
-              {/* Tax percentage */}
-              <TableCell>
-                <div className="flex items-center gap-3 w-[90%] outline-0 font-normal text-base text-[#242424] rounded-[8px] p-2.5 border-[1px] border-[#E4E4E4] focus-within:border-[#248567]">
-                  <input
-                    type="number"
-                    className="w-[90%] h-full outline-0 border-0"
-                    placeholder="0"
-                    value={row.tax}
+      <div className="w-[360px] overflow-auto md:w-auto">
+        <Table className=" w-[800px] md:w-full ">
+          <TableHeader>
+            <TableRow className="border-0 bg-[#EEEEEE] text-[#444444] font-bold text-base py-3">
+              <TableHead>
+                {numberOfRows ? numberOfRows : "#"} {invoiceType}
+              </TableHead>
+              <TableHead>Qty</TableHead>
+              <TableHead>Rate</TableHead>
+              <TableHead>Tax</TableHead>
+              <TableHead>Amount</TableHead>
+              <TableHead></TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.id}
+                className="text-[#242424] font-normal text-base"
+              >
+                {/* Product name/description */}
+                <TableCell className="w-[350px]">
+                  <Input
+                    className="w-[90%]"
+                    placeholder="Full Website Design and development"
+                    value={row.product}
                     onChange={(e) =>
-                      handleChange(row.id, "tax", e.target.value)
+                      handleChange(row.id, "product", e.target.value)
                     }
                   />
-                  %
-                </div>
-              </TableCell>
+                </TableCell>
 
-              {/* Computed amount */}
-              <TableCell>
-                <Input
-                  className="w-[90%] bg-gray-100 cursor-not-allowed"
-                  value={`₦${computeAmount(row)}`}
-                  disabled
-                />
-              </TableCell>
+                {/* Quantity */}
+                <TableCell>
+                  <Input
+                    className="w-[90%]"
+                    type="number"
+                    placeholder="1"
+                    value={row.qty}
+                    onChange={(e) =>
+                      handleChange(row.id, "qty", e.target.value)
+                    }
+                  />
+                </TableCell>
 
-              {/* Delete row button */}
-              <TableCell>
-                <Image
-                  src="/icon/delete.svg"
-                  alt="delete"
-                  width={44}
-                  height={44}
-                  className="cursor-pointer"
-                  onClick={() => deleteLine(row.id)}
-                />
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+                {/* Rate per unit */}
+                <TableCell>
+                  <Input
+                    className="w-[90%]"
+                    type="number"
+                    placeholder="0"
+                    value={row.rate}
+                    onChange={(e) =>
+                      handleChange(row.id, "rate", e.target.value)
+                    }
+                  />
+                </TableCell>
+
+                {/* Tax percentage */}
+                <TableCell>
+                  <div className="flex items-center gap-3 w-[90%] outline-0 font-normal text-base text-[#242424] rounded-[8px] p-2.5 border-[1px] border-[#E4E4E4] focus-within:border-[#248567]">
+                    <input
+                      type="number"
+                      className="w-[90%] h-full outline-0 border-0"
+                      placeholder="0"
+                      value={row.tax}
+                      onChange={(e) =>
+                        handleChange(row.id, "tax", e.target.value)
+                      }
+                    />
+                    %
+                  </div>
+                </TableCell>
+
+                {/* Computed amount */}
+                <TableCell>
+                  <Input
+                    className="w-[90%] bg-gray-100 cursor-not-allowed"
+                    value={`₦${computeAmount(row)}`}
+                    disabled
+                  />
+                </TableCell>
+
+                {/* Delete row button */}
+                <TableCell>
+                  <Image
+                    src="/icon/delete.svg"
+                    alt="delete"
+                    width={44}
+                    height={44}
+                    className="cursor-pointer"
+                    onClick={() => deleteLine(row.id)}
+                  />
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
 
       {/* Add new product row button */}
       <button
@@ -261,7 +268,7 @@ const ProductTable: React.FC<ProductTableProps> = ({
 
       {/* Invoice Summary Section */}
       <section className="mt-6 md:mt-[32px]">
-        <div className="flex flex-col-reverse md:items-start md:justify-between">
+        <div className="flex flex-col-reverse md:flex-row  md:items-start md:justify-between">
           {/* Notes or terms */}
           <div className="flex md:w-[30%] flex-col gap-5">
             <label className="text-[#444444] font-bold text-base">

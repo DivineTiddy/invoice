@@ -37,7 +37,7 @@ const ProductTable: React.FC<ProductTableProps> = ({
     },
   ]);
 
-  const numberOfRows = rows.length;
+  // const numberOfRows = rows.length;
 
   // Form-specific state fields
   const [discount, setDiscount] = useState<string>("");
@@ -162,9 +162,8 @@ const ProductTable: React.FC<ProductTableProps> = ({
         <Table className="w-[1100px] md:w-full">
           <TableHeader>
             <TableRow className="border-0 bg-[#EEEEEE] text-[#444444] font-bold text-base py-3">
-              <TableHead>
-                {numberOfRows ? numberOfRows : "#"} {invoiceType}
-              </TableHead>
+              <TableHead>#</TableHead>
+              <TableHead>{invoiceType}</TableHead>
               <TableHead>Qty</TableHead>
               <TableHead>Rate</TableHead>
               <TableHead>Tax</TableHead>
@@ -173,11 +172,16 @@ const ProductTable: React.FC<ProductTableProps> = ({
             </TableRow>
           </TableHeader>
           <TableBody>
-            {rows.map((row) => (
+            {rows.map((row, index) => (
               <TableRow
                 key={row.id}
                 className="text-[#242424] font-normal text-base"
               >
+                {/* Product number */}
+                <TableCell className=" ">
+                  <Input className="w-[40px]" value={index + 1} disabled />
+                </TableCell>
+
                 {/* Product name/description */}
                 <TableCell className="w-[350px]">
                   <Input
@@ -271,7 +275,7 @@ const ProductTable: React.FC<ProductTableProps> = ({
       <section className="mt-6 md:mt-[32px]">
         <div className="flex flex-col-reverse md:flex-row  md:items-start md:justify-between">
           {/* Notes or terms */}
-          <div className="flex md:w-[30%] flex-col gap-5">
+          <div className="flex md:w-[30%] flex-col gap-5 mt-6 md:mt-0">
             <label className="text-[#444444] font-bold text-base">
               Note/Conditions
             </label>
@@ -299,6 +303,7 @@ const ProductTable: React.FC<ProductTableProps> = ({
               <Input
                 className=" w-[120px] md:w-[60%]"
                 placeholder="0.00"
+                type="number"
                 value={discount}
                 onChange={(e) => setDiscount(e.target.value)}
               />
@@ -311,6 +316,7 @@ const ProductTable: React.FC<ProductTableProps> = ({
               <Input
                 className=" w-[120px] md:w-[60%]"
                 placeholder="0.00"
+                type="number"
                 value={amountPaid}
                 onChange={(e) => setAmountPaid(e.target.value)}
               />

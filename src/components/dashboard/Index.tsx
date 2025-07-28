@@ -272,7 +272,7 @@ const Index = () => {
         </section>
 
         {/* Product / Service Table Section */}
-        <section className=" mt-6 md:mt-[32px] space-y-6 w-full">
+        <section className=" mt-8 md:mt-[32px] space-y-6 w-full">
           <ProductTable
             invoiceType={invoiceType}
             setInvioceData={setInvioceData}

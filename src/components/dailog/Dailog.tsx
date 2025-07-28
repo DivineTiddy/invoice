@@ -1,4 +1,9 @@
-import { Dialog, DialogContent, DialogTrigger , DialogTitle} from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import Image from "next/image";
 import {
   Table,
@@ -7,7 +12,6 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-  
 } from "../ui/table";
 
 export function PreviewDailog() {
@@ -18,18 +22,18 @@ export function PreviewDailog() {
           Generate Invoice
         </button>
       </DialogTrigger>
-      <DialogContent className="w-[50%] text-[#444444] h-[700px] px-[63px] py-[43px] overflow-auto">
+      <DialogContent className="md:w-[50%] text-[#444444] h-[700px] md:px-[63px] py-[43px] overflow-auto">
         <div className="mt-[20px]">
           <section className="w-full flex justify-between item-center">
             <div>
               <Image
                 src="\image\image-13.svg"
                 alt="image"
-                width={80}
-                height={80}
-                className="rounded-full"
+                width={0}
+                height={0}
+                className="rounded-full md:w-[80px] md:h-[80px] w-[30px] h-[30px] object-cover"
               />
-              <p className="mt-[16px]  font-bold text-[20px]">
+              <p className="mt-[10px] md:mt-[16px]  font-bold text-sm md:text-[20px]">
                 JustOcean Design Agency
               </p>
               <Text>justoceanbiz@gmail.com</Text>
@@ -37,33 +41,41 @@ export function PreviewDailog() {
               <Text>+234-7067476896</Text>
             </div>
             <div className="spayce-y-6 ">
-              <DialogTitle className="text-[#248567] font-bold text-2xl">INVOICE</DialogTitle>
+              <DialogTitle className="text-[#248567] font-bold text-base md:text-2xl">
+                INVOICE
+              </DialogTitle>
               <span className="flex items-center justify-start gap-4">
                 <Text>Invoice No. :</Text>
-                <p className=" font-semibold  text-base">01</p>
+                <p className=" font-semibold  text-xs md:text-base">01</p>
               </span>
               <span className="flex items-center justify-start  gap-4">
                 <Text>Issued Date :</Text>
-                <p className=" font-semibold text-base">02 - 06 - 2025</p>
+                <p className=" font-semibold text-xs md:text-base">
+                  02 - 06 - 2025
+                </p>
               </span>
-              <span className="flex items-center justify-start gap-8">
+              <span className="flex items-center justify-start gap-4">
                 <Text>Due Date :</Text>
-                <p className=" font-semibold text-base">02 - 06 - 2025</p>
+                <p className=" font-semibold text-xs md:text-base">
+                  02 - 06 - 2025
+                </p>
               </span>
             </div>
           </section>
-          <section className="mt-[60px]">
-            <p className="font-normal text-base text-[#767676]">Subject</p>
-            <p className="font-semibold text-base ">Design Job</p>
-            <p className="mt-[38px] font-normal text-base text-[#767676]">
+          <section className="mt-[40px] md:mt-[60px]">
+            <p className="font-normal text-xs md:text-base text-[#767676]">
+              Subject
+            </p>
+            <p className="font-semibold text-xs md:text-base ">Design Job</p>
+            <p className="mt-[38px] font-normal text-xs md:text-base text-[#767676]">
               Bill to
             </p>
-            <p className="font-semibold text-base ">Michael Jones</p>
+            <p className="font-semibold text-xs md:text-base ">Michael Jones</p>
             <Text>4 Kenz Street, Lagos.</Text>
             <Text>wrt@gmail.com</Text>
             <Text>+234-7067476896</Text>
           </section>
-          <section className="mt-[60px]">
+          <section className="mt-[40px] md:mt-[60px]">
             <Table>
               <TableHeader className="">
                 <TableRow className="bg-[#248567]  px-2 py-4  font-bold text-base ">
@@ -84,7 +96,11 @@ export function PreviewDailog() {
               </TableHeader>
               <TableBody>
                 <TableRow className="mt-[20px] px-2 py-4  font-normal text-base ">
-                  <TableCell>Full Website Design and prototype</TableCell>
+                  <TableCell className="">
+                    <p className="w-[130px] overflow-x-auto">
+                      Full Website Design and prototype
+                    </p>
+                  </TableCell>
                   <TableCell className="text-right">1</TableCell>
                   <TableCell className="text-right">100</TableCell>
                   <TableCell className="text-right">0</TableCell>
@@ -93,34 +109,34 @@ export function PreviewDailog() {
               </TableBody>
             </Table>
           </section>
-          <section className="mt-[65px] flex justify-between items-start">
+          <section className=" mt-[40px] md:mt-[65px] flex justify-between items-start">
             <div>
               <Text>Note/Conditions</Text>
-              <p className=" font-normal text-base">
+              <p className=" mt-2 md:mt-0 font-normal w-[130px] md:w-auto text-xs md:text-base">
                 Work commences immediately after payment
               </p>
             </div>
             <div className="space-y-5">
               <span className="flex items-center gap-6 justify-between">
                 <Text>Subtotal</Text>
-                <p className="text-[#282828] font-normal text-base">N1000.00</p>
+                <p className="text-[#282828] font-normal text-xs md:text-base">N1000.00</p>
               </span>
               <span className="flex items-center gap-6 justify-between">
                 <Text>Discount</Text>
-                <p className="text-[#282828] font-normal text-base">0.00</p>
+                <p className="text-[#282828] font-normal text-xs md:text-base">0.00</p>
               </span>
               <span className="flex items-center gap-6 justify-between">
                 <Text>Amount Paid</Text>
-                <p className="text-[#282828] font-normal text-base">0.00</p>
+                <p className="text-[#282828] font-normal text-xs md:text-base">0.00</p>
               </span>
               <span className="bg-[#248567] text-[#EAEAEA] p-2 flex items-center gap-6 justify-between ">
-                <p className=" font-bold text-base">Balance Due</p>
+                <p className=" font-bold text-xs md:text-base">Balance Due</p>
                 <p className="font-bold text-lg">N1000.00</p>
               </span>
             </div>
           </section>
           <section className="w-full flex gap-5 items-center mt-[52px] justify-end">
-            <p className="font-normal text-base text-[#767676]">Refresh</p>
+            <p className="font-normal text-xs md:text-base text-[#767676]">Refresh</p>
             <Image
               src="\icon\refresh.svg"
               alt="icon"
@@ -128,10 +144,10 @@ export function PreviewDailog() {
               height={40}
               className="cursor-pointer"
             />
-            <button className="bg-[#EFEFEF] cursor-pointer py-4 px-6 rounded-[8px]  font-semibold text-base">
+            <button className="bg-[#EFEFEF] cursor-pointer px-4 py-4 md:px-6 rounded-[8px]  font-semibold text-xs md:text-base">
               Send as Email
             </button>
-            <button className="bg-[#248567] cursor-pointer py-4 px-6 rounded-[8px] text-[#EFFFFA] font-semibold text-base">
+            <button className="bg-[#248567] cursor-pointer px-4 py-4 md:px-6 rounded-[8px] text-[#EFFFFA] font-semibold text-xs md:text-base">
               Download as PDF
             </button>
           </section>
@@ -142,5 +158,9 @@ export function PreviewDailog() {
 }
 
 const Text = ({ children }: { children: React.ReactNode }) => {
-  return <p className="text-[#767676] font-normal text-base">{children}</p>;
+  return (
+    <p className="text-[#767676] font-normal text-xs md:text-base">
+      {children}
+    </p>
+  );
 };

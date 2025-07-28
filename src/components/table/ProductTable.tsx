@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Table,
   TableBody,
@@ -155,10 +154,12 @@ const ProductTable: React.FC<ProductTableProps> = ({
 
   return (
     <>
- 
+      {/* <ScrollAreaHorizontalDemo/> */}
+
       {/* Main table for line items */}
-      <div className="w-[360px] overflow-auto md:w-auto">
-        <Table className=" w-[800px] md:w-full ">
+
+      <div className="  w-full">
+        <Table className="w-[1100px] md:w-full">
           <TableHeader>
             <TableRow className="border-0 bg-[#EEEEEE] text-[#444444] font-bold text-base py-3">
               <TableHead>

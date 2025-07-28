@@ -15,7 +15,7 @@ export default function DashboardLayout({
       </div>
       <div className="flex gap-3 w-full h-full mt-[70px] md:mt-[90px]">
         <DashboardSideNav />
-        <div className="flex-1">{children}</div>
+        <div className="flex-1 overflow-x-auto">{children}</div>
       </div>
     </div>
   );

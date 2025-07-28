@@ -57,6 +57,8 @@ const Index = () => {
 
   return (
     <div className="w-full bg-[#FDFDFD] py-6 md:py-10 px-[20px] lg:px-[52px] rounded-[16px] ">
+     
+
       {/* Page Heading */}
       <h1 className="text-[#444444] font-bold text-xl">Invoice Details</h1>
 
@@ -250,7 +252,7 @@ const Index = () => {
         </section>
 
         {/* Invoice Dates */}
-        <section className="flex flex-col md:flex-row md:items-center mt-6 gap-6 md:mt-[36px] md:gap-[210px]">
+        <section className="flex flex-col md:flex-row md:items-center mt-6 gap-6 md:mt-[36px] md:gap-[160px]">
           <Chip>
             <Lable title="Issued Date" />
             <IssuedDate setInvioceData={setInvioceData} />
@@ -268,7 +270,6 @@ const Index = () => {
             <SelectDropdown />
           </Chip>
         </section>
-       
 
         {/* Product / Service Table Section */}
         <section className=" mt-6 md:mt-[32px] space-y-6 w-full">

@@ -285,18 +285,18 @@ const Index = () => {
             onClick={handleRefresh}
             className="flex items-center gap-2 cursor-pointer"
           >
-            <p className="font-normal text-base text-[#767676]">Refresh</p>
+            <p className="font-normal text-base text-[#767676] hidden md:block">Refresh</p>
             <Image
               src="/icon/refresh.svg"
               alt="icon"
               width={40}
               height={40}
-              className="cursor-pointer"
+              className="cursor-pointer "
             />
           </button>
 
           {/* Save draft without submission */}
-          <button className="bg-[#EFEFEF] cursor-pointer px-4 py-4 md:px-6 rounded-[8px] text-[#444444] font-semibold text-base">
+          <button className="bg-[#EFEFEF] cursor-pointer  py-4 px-6 rounded-[8px] text-[#444444] font-semibold text-base">
             Save as draft
           </button>
 

@@ -60,7 +60,7 @@ const Index = () => {
       <div className="text-[#444444] p-[32px] bg-[#FDFDFD] rounded-[16px]">
         <h1 className="font-bold text-xl">Invoice History</h1>
         <section className="mt-[50px] flex items-center justify-between">
-          <div className="flex items-center gap-3 py-3  bg-white border-[1px] border-[#CFCFCF] w-[400px] rounded-full  px-4">
+          <div className="flex items-center gap-3 py-3  bg-white border-[1px] border-[#CFCFCF] w-full md:w-[400px] rounded-full  px-4">
             <Image
               src="\icon\searchIcon.svg"
               alt="icon"
@@ -73,7 +73,7 @@ const Index = () => {
               className="w-full h-full font-normal text-base text-[#B2B2B2] outline-0"
             />
           </div>
-          <div className="flex items-center gap-2 border-[#E8E8E8] border-[1px] rounded-[32px] px-4">
+          <div className=" hidden md:flex items-center gap-2 border-[#E8E8E8] border-[1px] rounded-[32px] px-4">
             <p className="text-[#767676] px-3 py-2 font-normal text-base border-r-[1px] border-[#DEDEDE]">
               Sort by
             </p>

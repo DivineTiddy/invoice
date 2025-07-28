@@ -63,6 +63,7 @@ export type InvoiceData = {
   dueDate: string;
   currency: string;
   productData: ProductRow[];
+  paymentNote: string;
   note: string;
   subtotal: number;
   discount: string;

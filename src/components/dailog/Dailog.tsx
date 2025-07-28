@@ -22,7 +22,7 @@ export function PreviewDailog() {
           Generate Invoice
         </button>
       </DialogTrigger>
-      <DialogContent className="md:w-[50%] text-[#444444] h-[700px] px-1 md:px-[63px] py-[43px] overflow-auto">
+      <DialogContent className="md:w-[50%] text-[#444444] h-[700px] px-2 md:px-[63px] py-[43px] overflow-auto">
         <div className="mt-[20px]">
           <section className="w-full flex justify-between item-center">
             <div>
@@ -92,7 +92,7 @@ export function PreviewDailog() {
                 <TableRow className="mt-[20px] px-2 py-4  font-normal text-base ">
                   <TableCell>
                     {" "}
-                    <p className="w-[130px] overflow-x-auto">
+                    <p className="w-[130px] md:w-auto overflow-x-auto">
                       Full Website Design and prototype
                     </p>
                   </TableCell>
@@ -105,13 +105,21 @@ export function PreviewDailog() {
             </Table>
           </section>
           <section className="mt-[65px] flex justify-between items-start">
-            <div>
-              <Text>Note/Conditions</Text>
-              <p className=" font-normal text-base w-[130px]">
-                Work commences immediately after payment
-              </p>
+            <div className="space-y-7">
+              <div>
+                <Text>Payment Account Details</Text>
+                <p className=" font-normal text-base w-[130px] md:w-auto">
+                  9020538305 <br /> Opay <br /> Chinedu Joseph Ozulu
+                </p>
+              </div>
+              <div>
+                <Text>Note/Conditions</Text>
+                <p className=" font-normal text-base w-[130px] md:w-auto">
+                  Work commences immediately after payment
+                </p>
+              </div>
             </div>
-            <div className="space-y-5">
+            <div className="space-y-2">
               <span className="flex items-center gap-6 justify-between">
                 <Text>Subtotal</Text>
                 <p className="text-[#282828] font-normal text-base">N1000.00</p>
@@ -139,10 +147,10 @@ export function PreviewDailog() {
               height={40}
               className="cursor-pointer"
             />
-            <button className="bg-[#EFEFEF] cursor-pointer px-4 py-4 md:px-6 rounded-[8px]  font-semibold text-base">
+            <button className="bg-[#EFEFEF] cursor-pointer px-4 py-4 md:px-6 rounded-[8px]  font-semibold text-[15px]">
               Send as Email
             </button>
-            <button className="bg-[#248567] cursor-pointer px-4 py-4 md:px-6 rounded-[8px] text-[#EFFFFA] font-semibold text-base">
+            <button className="bg-[#248567] cursor-pointer px-4 py-4 md:px-6 rounded-[8px] text-[#EFFFFA] font-semibold text-[15px]">
               Download as PDF
             </button>
           </section>

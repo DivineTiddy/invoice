@@ -41,6 +41,7 @@ const Index = () => {
     currency: "",
     productData: [],
     note: "",
+    paymentNote: "",
     subtotal: 0,
     discount: "",
     amountPaid: "",
@@ -57,8 +58,6 @@ const Index = () => {
 
   return (
     <div className="w-full bg-[#FDFDFD] py-6 md:py-10 px-[20px] lg:px-[52px] rounded-[16px] ">
-     
-
       {/* Page Heading */}
       <h1 className="text-[#444444] font-bold text-xl">Invoice Details</h1>
 

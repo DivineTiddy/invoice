@@ -43,6 +43,7 @@ const ProductTable: React.FC<ProductTableProps> = ({
   const [discount, setDiscount] = useState<string>("");
   const [amountPaid, setAmountPaid] = useState<string>("");
   const [note, setNote] = useState<string>("");
+  const [paymentNote, setPaymentNote] = useState<string>("");
 
   /**
    * Adds a new product line to the invoice.
@@ -149,8 +150,9 @@ const ProductTable: React.FC<ProductTableProps> = ({
       subtotal: subtotal,
       balanceDue: balance,
       note: note,
+      paymentNote:paymentNote,
     }));
-  }, [amountPaid, rows, discount, subtotal, balance, note]);
+  }, [amountPaid, rows, discount, subtotal, balance, note , paymentNote]);
 
   return (
     <>
@@ -274,16 +276,30 @@ const ProductTable: React.FC<ProductTableProps> = ({
       {/* Invoice Summary Section */}
       <section className="mt-6 md:mt-[32px]">
         <div className="flex flex-col-reverse md:flex-row  md:items-start md:justify-between">
-          {/* Notes or terms */}
-          <div className="flex md:w-[30%] flex-col gap-5 mt-6 md:mt-0">
-            <label className="text-[#444444] font-bold text-base">
-              Note/Conditions
-            </label>
-            <textarea
-              onChange={(e) => setNote(e.target.value)}
-              placeholder="Leave a note..."
-              className="bg-[#FDFDFD] rounded-[8px] h-[110px] py-2.5 outline-0 px-4 border-[1px] border-[#E4E4E4] focus:border-[#248567]"
-            />
+          <div className=" w-full md:w-2/4 space-y-4">
+            {/* Notes or terms */}
+            <div className="flex md:w-[60%] flex-col gap-5 mt-6 md:mt-0">
+              <label className="text-[#444444] font-bold text-base">
+                Payment Account Details
+              </label>
+              <textarea
+                onChange={(e) => setPaymentNote(e.target.value)}
+                placeholder=" Company’s account details for payment"
+                className="bg-[#FDFDFD] rounded-[8px]  h-[110px] py-2.5 outline-0 px-4 border-[1px] border-[#E4E4E4] focus:border-[#248567]"
+              />
+            </div>
+
+            {/* Notes or terms */}
+            <div className="flex md:w-[60%] flex-col gap-5 mt-6 md:mt-0">
+              <label className="text-[#444444] font-bold text-base">
+                Note/Conditions
+              </label>
+              <textarea
+                onChange={(e) => setNote(e.target.value)}
+                placeholder="Leave a note..."
+                className="bg-[#FDFDFD] rounded-[8px] h-[110px] py-2.5 outline-0 px-4 border-[1px] border-[#E4E4E4] focus:border-[#248567]"
+              />
+            </div>
           </div>
 
           {/* Pricing Summary */}

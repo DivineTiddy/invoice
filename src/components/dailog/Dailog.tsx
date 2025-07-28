@@ -46,31 +46,31 @@ export function PreviewDailog() {
               </DialogTitle>
               <span className="flex items-center justify-start gap-4">
                 <Text>Invoice No. :</Text>
-                <p className=" font-semibold  text-xs md:text-base">01</p>
+                <p className=" font-semibold  text-sm md:text-base">01</p>
               </span>
               <span className="flex items-center justify-start  gap-4">
                 <Text>Issued Date :</Text>
-                <p className=" font-semibold text-xs md:text-base">
+                <p className=" font-semibold text-sm md:text-base">
                   02 - 06 - 2025
                 </p>
               </span>
               <span className="flex items-center justify-start gap-4">
                 <Text>Due Date :</Text>
-                <p className=" font-semibold text-xs md:text-base">
+                <p className=" font-semibold text-sm md:text-base">
                   02 - 06 - 2025
                 </p>
               </span>
             </div>
           </section>
           <section className="mt-[40px] md:mt-[60px]">
-            <p className="font-normal text-xs md:text-base text-[#767676]">
+            <p className="font-normal text-sm md:text-base text-[#767676]">
               Subject
             </p>
-            <p className="font-semibold text-xs md:text-base ">Design Job</p>
-            <p className="mt-[38px] font-normal text-xs md:text-base text-[#767676]">
+            <p className="font-semibold text-sm md:text-base ">Design Job</p>
+            <p className="mt-[38px] font-normal text-sm md:text-base text-[#767676]">
               Bill to
             </p>
-            <p className="font-semibold text-xs md:text-base ">Michael Jones</p>
+            <p className="font-semibold text-sm md:text-base ">Michael Jones</p>
             <Text>4 Kenz Street, Lagos.</Text>
             <Text>wrt@gmail.com</Text>
             <Text>+234-7067476896</Text>
@@ -112,31 +112,31 @@ export function PreviewDailog() {
           <section className=" mt-[40px] md:mt-[65px] flex justify-between items-start">
             <div>
               <Text>Note/Conditions</Text>
-              <p className=" mt-2 md:mt-0 font-normal w-[130px] md:w-auto text-xs md:text-base">
+              <p className=" mt-2 md:mt-0 font-normal w-[130px] md:w-auto text-sm md:text-base">
                 Work commences immediately after payment
               </p>
             </div>
             <div className="space-y-5">
               <span className="flex items-center gap-6 justify-between">
                 <Text>Subtotal</Text>
-                <p className="text-[#282828] font-normal text-xs md:text-base">N1000.00</p>
+                <p className="text-[#282828] font-normal text-sm md:text-base">N1000.00</p>
               </span>
               <span className="flex items-center gap-6 justify-between">
                 <Text>Discount</Text>
-                <p className="text-[#282828] font-normal text-xs md:text-base">0.00</p>
+                <p className="text-[#282828] font-normal text-sm md:text-base">0.00</p>
               </span>
               <span className="flex items-center gap-6 justify-between">
                 <Text>Amount Paid</Text>
-                <p className="text-[#282828] font-normal text-xs md:text-base">0.00</p>
+                <p className="text-[#282828] font-normal text-sm md:text-base">0.00</p>
               </span>
               <span className="bg-[#248567] text-[#EAEAEA] p-2 flex items-center gap-6 justify-between ">
-                <p className=" font-bold text-xs md:text-base">Balance Due</p>
+                <p className=" font-bold text-sm md:text-base">Balance Due</p>
                 <p className="font-bold text-lg">N1000.00</p>
               </span>
             </div>
           </section>
           <section className="w-full flex gap-5 items-center mt-[52px] justify-end">
-            <p className="font-normal text-xs md:text-base text-[#767676]">Refresh</p>
+            <p className="font-normal text-sm md:text-base text-[#767676]">Refresh</p>
             <Image
               src="\icon\refresh.svg"
               alt="icon"
@@ -144,10 +144,10 @@ export function PreviewDailog() {
               height={40}
               className="cursor-pointer"
             />
-            <button className="bg-[#EFEFEF] cursor-pointer px-4 py-4 md:px-6 rounded-[8px]  font-semibold text-xs md:text-base">
+            <button className="bg-[#EFEFEF] cursor-pointer px-4 py-4 md:px-6 rounded-[8px]  font-semibold text-sm md:text-base">
               Send as Email
             </button>
-            <button className="bg-[#248567] cursor-pointer px-4 py-4 md:px-6 rounded-[8px] text-[#EFFFFA] font-semibold text-xs md:text-base">
+            <button className="bg-[#248567] cursor-pointer px-4 py-4 md:px-6 rounded-[8px] text-[#EFFFFA] font-semibold text-sm md:text-base">
               Download as PDF
             </button>
           </section>
@@ -159,7 +159,7 @@ export function PreviewDailog() {
 
 const Text = ({ children }: { children: React.ReactNode }) => {
   return (
-    <p className="text-[#767676] font-normal text-xs md:text-base">
+    <p className="text-[#767676] font-normal text-sm md:text-base">
       {children}
     </p>
   );

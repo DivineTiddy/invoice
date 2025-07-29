@@ -1,16 +1,16 @@
 "use client";
 
-import HistoryCard from "@/components/cards/HistoryCard";
+import DraftCard from "@/components/cards/DraftCard";
 import { HistorySortBy } from "@/components/select/HistorySortBy";
 import Image from "next/image";
 import React, { useState } from "react";
 
-type HistoryCardProps = {
+type DraftCardProps = {
   date: string;
   subject: string;
   client: string;
 };
-const historyData: HistoryCardProps[] = [
+const historyData: DraftCardProps[] = [
   {
     date: "2 days ago  |  Invoice No. 01",
     subject: "Invoice for web development services",
@@ -47,6 +47,7 @@ const ITEMS_PER_PAGE = 4;
 
 const Index = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [showViewIndex, setShowViewIndex] = useState<number | null>(null);
 
   const totalPages = Math.ceil(historyData.length / ITEMS_PER_PAGE);
 
@@ -59,8 +60,9 @@ const Index = () => {
     <>
       <div className="text-[#444444] px-5 md:p-[32px] bg-[#FDFDFD]  rounded-[16px]">
         <h1 className="font-bold text-xl border-b-1 border-[#E5E5E5] py-3 md:border-0 md:py-0">
-          Invoice History
+          Draft
         </h1>
+        {/* Search and filter */}
         <section className="mt-[50px] flex items-center justify-between">
           <div className="flex items-center gap-3 py-3  bg-white border-[1px] border-[#CFCFCF] w-full md:w-[400px] rounded-full  px-4">
             <Image
@@ -87,11 +89,14 @@ const Index = () => {
 
         <section className=" md:hidden mt-[42px] space-y-3.5">
           {historyData.map((item, index) => (
-            <HistoryCard
+            <DraftCard
               key={index}
               date={item.date}
               subject={item.subject}
               client={item.client}
+              index={index}
+              showViewIndex={showViewIndex}
+              setShowViewIndex={setShowViewIndex}
             />
           ))}
         </section>
@@ -99,15 +104,19 @@ const Index = () => {
         {/* Display pagination data on desktop view */}
         <section className="hidden md:block mt-[42px] space-y-3.5">
           {paginatedData.map((item, index) => (
-            <HistoryCard
+            <DraftCard
               key={index}
               date={item.date}
               subject={item.subject}
               client={item.client}
+              index={index}
+              showViewIndex={showViewIndex}
+              setShowViewIndex={setShowViewIndex}
             />
           ))}
         </section>
       </div>
+      {/* Pagination container */}
       <div className="hidden mt-4 md:flex justify-center gap-4">
         <button
           onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}

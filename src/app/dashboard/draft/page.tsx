@@ -1,11 +1,8 @@
-import React from 'react'
+import Index from "@/components/dashboard/drafts/Index";
+import React from "react";
 
 const page = () => {
-  return (
-    <div>
-      hello
-    </div>
-  )
-}
+  return <Index />;
+};
 
-export default page
+export default page;

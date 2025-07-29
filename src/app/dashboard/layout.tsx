@@ -14,7 +14,7 @@ export default function DashboardLayout({
         <DashboardTopNav />
       </div>
       <div className="flex gap-3 w-full h-full mt-[70px] md:mt-[90px]">
-        <DashboardSideNav />
+        <DashboardSideNav className="hidden md:flex h-[700px] py-10 px-4" />
         <div className="flex-1 overflow-x-auto">{children}</div>
       </div>
     </div>

@@ -33,7 +33,7 @@ export function PreviewDailog() {
                 height={0}
                 className="rounded-full w-[40px] h-[40px] md:w-[80px] md:h-[80px]"
               />
-              <p className="mt-2.5 md:mt-[16px]  font-bold text-base md:text-[20px]">
+              <p className="mt-2.5 md:mt-[16px] mb-2 md:mb-0 font-bold text-base md:text-[20px]">
                 JustOcean Design Agency
               </p>
               <Text>justoceanbiz@gmail.com</Text>
@@ -73,7 +73,7 @@ export function PreviewDailog() {
             <Text>wrt@gmail.com</Text>
             <Text>+234-7067476896</Text>
           </section>
-          <section className="mt-10 md:mt-[60px]">
+          <section className="mt-10 md:mt-[60px] py-3 border-b-1 border-[#E5E5E5]">
             <Table>
               <TableHeader className="">
                 <TableRow className="bg-[#248567]  px-2 py-4  font-bold text-sm md:text-base ">
@@ -96,14 +96,14 @@ export function PreviewDailog() {
                 <TableRow className="mt-[20px] px-2 py-4  font-normal text-sm md:text-base ">
                   <TableCell>
                     {" "}
-                    <p className="w-[180px] md:w-auto overflow-x-auto">
+                    <p className="w-[180px] py-2 md:w-auto overflow-x-auto">
                       Full Website Design and prototype
                     </p>
                   </TableCell>
-                  <TableCell className="text-right">1</TableCell>
-                  <TableCell className="text-right">100</TableCell>
-                  <TableCell className="text-right">0</TableCell>
-                  <TableCell className="text-right">100</TableCell>
+                  <TableCell className="text-right py-2">1</TableCell>
+                  <TableCell className="text-right py-2">100</TableCell>
+                  <TableCell className="text-right py-2">0</TableCell>
+                  <TableCell className="text-right py-2">100</TableCell>
                 </TableRow>
               </TableBody>
             </Table>

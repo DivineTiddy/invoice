@@ -5,9 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const DashboardSideNav = () => {
+
+const DashboardSideNav = ({className}:{className:string}) => {
   return (
-    <div className=" hidden lg:flex bg-[#FDFDFD]  flex-col gap-1.5 py-10 px-4 rounded-[16px] w-[270px] h-[700px] text-base font-semibold">
+    <div className={`${className} bg-[#FDFDFD]  flex-col gap-1.5  rounded-[16px] w-[270px]  text-base font-semibold`}>
       <RouteLink href="/dashboard" src="/icon/tabler.svg">
         Invoice
       </RouteLink>

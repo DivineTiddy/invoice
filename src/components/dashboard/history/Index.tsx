@@ -85,7 +85,7 @@ const Index = () => {
 
         {/* Display only history full data on mobile view */}
 
-        <section className=" md:hidden mt-[42px] space-y-3.5">
+        <section className=" md:hidden mt-[42px] py-3 space-y-3.5">
           {historyData.map((item, index) => (
             <HistoryCard
               key={index}
@@ -97,7 +97,7 @@ const Index = () => {
         </section>
 
         {/* Display pagination data on desktop view */}
-        <section className="hidden md:block mt-[42px] space-y-3.5">
+        <section className="hidden md:block mt-[42px] py-3 space-y-3.5">
           {paginatedData.map((item, index) => (
             <HistoryCard
               key={index}

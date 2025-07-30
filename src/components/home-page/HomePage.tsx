@@ -68,9 +68,9 @@ const HomePage = () => {
 
   return (
     <>
-      <header className="w-full h-auto px-[120px] py-9.5 bg-[linear-gradient(185deg,_rgba(244,255,252,1)_71%,_rgba(57,188,147,0.84)_100%)]">
+      <header className="w-full h-auto md:px-[120px] py-9.5 bg-[linear-gradient(185deg,_rgba(244,255,252,1)_71%,_rgba(57,188,147,0.84)_100%)]">
         <HomeDesktopNav />
-        <section className="flex items-center flex-col  mt-[75px]">
+        <section className="flex items-center flex-col  mt-[50px] md:mt-[75px]">
           <div className="w-auto border-[1px] border-[#DDDDDD] rounded-[32px] p-2 flex items-center justify-center gap-1.5">
             <Image
               src="\icon\lightning.svg"
@@ -80,14 +80,14 @@ const HomePage = () => {
             />
             <p className="text-[#767676] font-normal text-xs">Fast and free</p>
           </div>
-          <h1 className="text-[#242424] mt-2 font-bold text-[60px] text-center leading-14">
+          <h1 className="text-[#444444] mt-2 font-bold text-3xl md:text-[60px] text-center leading-10 md:leading-14">
             Generate Free <br /> Instant Pro Invoice
           </h1>
-          <p className="text-[#5E5E5E] font-normal mt-5 text-center text-base w-[23%]">
+          <p className="text-[#5E5E5E] font-normal mt-5 text-center text-base w-[50%] md:w-[23%]">
             Clean invoice and receipt that represent your brand, with your logo
             and signature
           </p>
-          <div className="mt-[42px] flex items-center gap-[42px]">
+          <div className="mt-[42px] flex flex-col md:flex-row items-center gap-5 md:gap-[42px]">
             <button className=" text-[#EFFFFA] cursor-pointer font-semibold text-base bg-[#248567] rounded-[8px] py-4 px-6 drop-shadow-sm drop-shadow-black/10">
               Generate Invoice
             </button>
@@ -106,11 +106,11 @@ const HomePage = () => {
         </section>
       </header>
       <main className="">
-        <section className="bg-[#FDFDFD] w-full  p-[120px]">
-          <h1 className="text-[42px] font-bold text-center text-[#242424] leading-12">
+        <section className="bg-[#FDFDFD] w-full px-5 py-10 md:py-0 md:px-0 md:p-[120px]">
+          <h1 className=" text-2xl md:text-[42px] font-bold text-center text-[#444444] leading-7 md:leading-12">
             Built For Every <br /> Business and Services
           </h1>
-          <div className="mt-[73px] grid grid-cols-3 gap-[28px]">
+          <div className="mt-[73px] grid grid-cols-1 md:grid-cols-3 gap-[28px]">
             {bussinessContent.map((item, index) => (
               <BusinessCard
                 key={index + 1}
@@ -121,9 +121,9 @@ const HomePage = () => {
             ))}
           </div>
         </section>
-        <section className="flex items-start  w-full ">
-          <div className="bg-[#248567] h-[740px] w-[50%] p-[112px]">
-            <h1 className="text-[#EFEFEF] font-bold text-5xl leading-18">
+        <section className="flex flex-col md:flex-row items-start w-full ">
+          <div className="bg-[#248567] md:h-[740px] w-full md:w-[50%] px-5 py-10 md:py-0 md:px-0 md:p-[112px]">
+            <h1 className="text-[#EFEFEF] font-bold text-2xl md:text-5xl leading-10 md:leading-18">
               Works for All Types of <br /> Business.{" "}
             </h1>
             <p className="text-[#DFDFDF] font-normal text-base mt-[24px]">
@@ -148,34 +148,34 @@ const HomePage = () => {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="w-[50%] h-[740px] "
+            className="w-full h-[400px] md:w-[50%] md:h-[740px] "
           ></div>
         </section>
-        <section className="bg-[#FDFDFD] flex items-center justify-between px-[120px] py-[79px] ">
-          <div className="bg-[#248567] relative rounded-[32px] h-[620px] w-[620px]">
+        <section className="bg-[#FDFDFD] flex flex-col md:flex-row items-center justify-between px-5  md:px-[120px] py-[79px] ">
+          <div className="bg-[#248567] relative rounded-[32px] w-full h-[400px] md:h-[620px] md:w-[620px]">
             <Image
               src="\image\image-2.svg"
               alt="image"
-              width={620}
-              height={620}
-              className="mt-[-23px] ml-[25px] absolute"
+              width={0}
+              height={0}
+              className="w-full h-[400px] md:w-[620px] md:h-[620px] mt-[-23px] ml-[25px] absolute"
             />
           </div>
-          <div>
-            <h1 className="text-[#242424]  font-bold text-5xl leading-14">
+          <div className="flex flex-col items-center md:flex-row md:items-start mt-10 md:mt-0">
+            <h1 className="text-center md:text-start ext-[#444444]  font-bold text-2xl md:text-5xl leading-8 md:leading-14">
               Trusted by <br /> Freelancers, SME’s <br /> and Businesses across{" "}
               Nigeria.
             </h1>
-            <p className="font-normal text-base text-[#242424] leading-5 mt-5">
+            <p className="text-center md:text-start font-normal text-base text-[#242424] leading-5 mt-5">
               JustInvoice caters for all services. You can <br /> generate as
               professional invoices and receipts for you clients in an instant.
             </p>
-            <button className="text-[#EFFFFA] cursor-pointer shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] font-semibold text-base bg-[#248567] py-4 px-6 rounded-[8px] mt-[67px]">
+            <button className="text-[#EFFFFA] cursor-pointer shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] font-semibold text-base bg-[#248567] py-4 px-6 rounded-[8px] mt-10 md:mt-[67px]">
               Generate Invoice
             </button>
           </div>
         </section>
-        <section className="bg-[#FDFDFD] w-full  pl-[120px] py-[120px]">
+        <section className="bg-[#FDFDFD] w-full  md:pl-[120px] px-5 py-10 md:py-[120px]">
           <h1 className="font-bold text-[48px] text-[#242424] text-center">
             Who It Is For.
           </h1>
@@ -185,12 +185,12 @@ const HomePage = () => {
           </p>
           <SliderCard_1 />
         </section>
-        <section className="flex justify-between h-[1060px] items-start bg-[#EBFFF9] mt-[40px]  ">
-          <div className="bg-[#248567] pr-[80px] h-full pl-[120px] pt-[90px]">
-            <h1 className="text-[#F0F0F0] font-bold text-5xl leading-16">
+        <section className="flex flex-col md:flex-row justify-between md:h-[1060px] items-start bg-[#EBFFF9] mt-[40px]  ">
+          <div className="flex flex-col items-center bg-[#248567] px-5 md:px-0 md:pr-[80px] w-full md:w-auto h-full md:pl-[120px] pt-[90px]">
+            <h1 className="text-center md:text-start text-[#F0F0F0] font-bold text-5xl leading-16">
               Frequently <br /> Asked <br /> Questions{" "}
             </h1>
-            <p className="text-[#E5E5E5] font-normal text-base leading-7 mt-5">
+            <p className="text-center md:text-start text-[#E5E5E5] font-normal text-base leading-7 mt-5">
               We have answers to all your possible questions. <br /> If you have
               more questions not listed here, then <br /> reach out to us
               through the contact us page.
@@ -199,7 +199,7 @@ const HomePage = () => {
               View All
             </button>
           </div>
-          <div className="w-[65%] pr-[120px] pt-[90px] pb-[50px] flex flex-col ">
+          <div className=" md:w-[65%] md:pr-[120px] pt-[90px] pb-[50px] flex flex-col ">
             {faq_data.map((item) => (
               <FaqAccordion
                 key={item.id}
@@ -212,7 +212,7 @@ const HomePage = () => {
             ))}
           </div>
         </section>
-        <section className="px-[120px] py-[90px] bg-[#FDFDFD]">
+        <section className=" px-5 md:px-[120px] py-[90px] bg-[#FDFDFD]">
           <h1 className="text-[#242424] font-bold text-5xl text-center">
             What Our Users <br /> Are Saying
           </h1>
@@ -236,7 +236,7 @@ const HomePage = () => {
           </button>
         </section>
         <section className="bg-[#0C0C0C] mt-[60px] p-[68px]">
-          <div className="w-full flex items-start justify-between">
+          <div className="w-full flex flex-col md:flex-row items-start justify-between">
             <div>
               <div className="flex gap-[10px] items-center">
                 <Image

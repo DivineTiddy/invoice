@@ -33,7 +33,7 @@ export default function SliderCard_1() {
       <Slider {...settings}>
         {for_who_data.map((item) => (
           <div key={item.id} className="p-2">
-            <div className="group w-full h-[590px] cursor-pointer  rounded-[32px] hover:bg-[#248567] bg-[#F0F0F0] border border-[#E0E0E0] transition-colors duration-300">
+            <div className="group w-full h-[650px] md:h-[590px] cursor-pointer  rounded-[32px] hover:bg-[#248567] bg-[#F0F0F0] border border-[#E0E0E0] transition-colors duration-300">
               <Image
                 src={item.url}
                 alt={item.title}

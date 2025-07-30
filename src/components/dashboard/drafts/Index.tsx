@@ -63,7 +63,7 @@ const Index = () => {
           Draft
         </h1>
         {/* Search and filter */}
-        <section className="mt-[50px] flex items-center justify-between">
+        <section className="mt-[50px] flex items-center  justify-between">
           <div className="flex items-center gap-3 py-3  bg-white border-[1px] border-[#CFCFCF] w-full md:w-[400px] rounded-full  px-4">
             <Image
               src="\icon\searchIcon.svg"
@@ -87,7 +87,7 @@ const Index = () => {
 
         {/* Display only history full data on mobile view */}
 
-        <section className=" md:hidden mt-[42px] space-y-3.5">
+        <section className=" md:hidden mt-[42px] py-3 space-y-3.5">
           {historyData.map((item, index) => (
             <DraftCard
               key={index}
@@ -102,7 +102,7 @@ const Index = () => {
         </section>
 
         {/* Display pagination data on desktop view */}
-        <section className="hidden md:block mt-[42px] space-y-3.5">
+        <section className="hidden md:block mt-[42px] py-3 space-y-3.5">
           {paginatedData.map((item, index) => (
             <DraftCard
               key={index}

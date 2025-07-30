@@ -52,7 +52,7 @@ const MobileSideNav = () => {
               </button>
             </SheetClose>
           </SheetTitle>
-          <SheetDescription className="w-[60%] h-[700px] bg-[#FDFDFD] p-4 -mt-1.5">
+          <SheetDescription className="w-[60%] h-screen bg-[#FDFDFD] p-4 -mt-1.5">
             <RouteLink
               href="/dashboard"
               src="/icon/tabler.svg"

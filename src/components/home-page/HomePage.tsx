@@ -186,8 +186,8 @@ const HomePage = () => {
           <SliderCard_1 />
         </section>
         <section className="flex flex-col md:flex-row justify-between md:h-[1060px] items-start bg-[#EBFFF9] mt-[40px]  ">
-          <div className="flex flex-col items-center bg-[#248567] px-5 md:px-0 md:pr-[80px] w-full md:w-auto h-full md:pl-[120px] pt-[90px]">
-            <h1 className="text-center md:text-start text-[#F0F0F0] font-bold text-5xl leading-16">
+          <div className="flex flex-col items-center bg-[#248567] py-10 md:py-0 md:px-0 md:pr-[80px] w-full md:w-auto h-full md:pl-[120px] md:pt-[90px]">
+            <h1 className="text-center md:text-start text-[#F0F0F0] font-bold text-2xl md:text-5xl md:leading-16">
               Frequently <br /> Asked <br /> Questions{" "}
             </h1>
             <p className="text-center md:text-start text-[#E5E5E5] font-normal text-base leading-7 mt-5">
@@ -199,7 +199,7 @@ const HomePage = () => {
               View All
             </button>
           </div>
-          <div className=" md:w-[65%] md:pr-[120px] pt-[90px] pb-[50px] flex flex-col ">
+          <div className=" md:w-[65%] md:pr-[120px] px-5 md:px-0 pt-[90px] pb-[50px] flex flex-col ">
             {faq_data.map((item) => (
               <FaqAccordion
                 key={item.id}
@@ -213,7 +213,7 @@ const HomePage = () => {
           </div>
         </section>
         <section className=" px-5 md:px-[120px] py-[90px] bg-[#FDFDFD]">
-          <h1 className="text-[#242424] font-bold text-5xl text-center">
+          <h1 className="text-[#242424] font-bold text-2xl md:text-5xl text-center">
             What Our Users <br /> Are Saying
           </h1>
           <p className="font-normal mt-[16px] text-base text-[#777777] text-center">
@@ -225,17 +225,17 @@ const HomePage = () => {
       </main>
       <footer className="w-full mt-[40px]">
         <section className="bg-[#043325] flex flex-col gap-3 items-center py-[70px]">
-          <h1 className="text-[#EAEAEA] font-bold text-5xl">
+          <h1 className="text-[#EAEAEA] font-bold text-2xl md:text-5xl">
             Get paid faster.
           </h1>
-          <p className="text-[#EAEAEA] font-normal text-xl">
+          <p className="text-[#EAEAEA] font-normal text-base md:text-xl">
             Start invoicing today
           </p>
           <button className="cursor-pointer py-[16px] px-[24px] mt-4 rounded-[8px] bg-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] text-[#248567]">
             Generate Invoice
           </button>
         </section>
-        <section className="bg-[#0C0C0C] mt-[60px] p-[68px]">
+        <section className="bg-[#0C0C0C] mt-[60px] px-5 py-[50px] md:px-0 md:py-0 md:p-[68px]">
           <div className="w-full flex flex-col md:flex-row items-start justify-between">
             <div>
               <div className="flex gap-[10px] items-center">
@@ -275,7 +275,7 @@ const HomePage = () => {
                 />
               </div>
             </div>
-            <ul className="text-[#7D7D7D] space-y-4">
+            <ul className="mt-10 md:mt-0 text-[#7D7D7D] space-y-4">
               <li className="text-[#EAEAEA] font-semibold text-xl border-b-[1px] border-[#2C2C2C] pb-2">
                 Quicklinks
               </li>
@@ -284,7 +284,7 @@ const HomePage = () => {
               <li>FAQ</li>
               <li>Terms & Privacy</li>
             </ul>
-            <ul className="text-[#7D7D7D] space-y-4">
+            <ul className="mt-10 md:mt-0 text-[#7D7D7D] space-y-4">
               <li className="text-[#EAEAEA] font-semibold text-xl border-b-[1px] border-[#2C2C2C] pb-2">
                 Features
               </li>
@@ -293,7 +293,7 @@ const HomePage = () => {
               <li>Custom Branding</li>
               <li>Download PDF</li>
             </ul>
-            <ul className="text-[#7D7D7D] space-y-4">
+            <ul className="mt-10 md:mt-0 text-[#7D7D7D] space-y-4">
               <li className="text-[#EAEAEA] font-semibold text-xl border-b-[1px] border-[#2C2C2C] pb-2">
                 Contact
               </li>

@@ -25,7 +25,7 @@ const DashboardTopNav = () => {
           height={24}
           className="cursor-pointer"
         />
-        <div className="flex items-center gap-3 cursor-pointer">
+        <div className="flex items-center gap-4 cursor-pointer">
           <Image src="/image/image-11.svg" alt="image" width={42} height={42} />
           <div className=" md:hidden">
             <MobileSideNav />

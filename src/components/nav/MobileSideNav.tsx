@@ -24,7 +24,7 @@ const MobileSideNav = () => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger className="cursor-pointer">
-        <Image src="/icon/menu-burger.svg" alt="icon" width={24} height={24} />
+        <Image src="/icon/menu-burger.svg" alt="icon" width={34} height={34} />
       </SheetTrigger>
       <SheetContent className="bg-transparent border-0 w-full p-0 px-0 md:hidden">
         <SheetHeader className="border-0">

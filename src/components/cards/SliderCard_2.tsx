@@ -28,6 +28,13 @@ export default function PreviousNextMethods() {
     beforeChange: (_: number, next: number) => setActiveSlide(next),
     responsive: [
       {
+        breakpoint: 1028,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,

@@ -16,6 +16,7 @@ import FaqAccordion from "../accordion/FaqAccordion";
 import { faq_data } from "@/data/data";
 import SliderCard_1 from "../cards/SliderCard_1";
 import SliderCard_2 from "../cards/SliderCard_2";
+import Link from "next/link";
 
 const bussinessContent = [
   {
@@ -68,7 +69,7 @@ const HomePage = () => {
 
   return (
     <>
-      <header className="w-full h-auto md:px-[120px] py-9.5 bg-[linear-gradient(185deg,_rgba(244,255,252,1)_71%,_rgba(57,188,147,0.84)_100%)]">
+      <header className="w-full h-auto md:px-[20px] lg:px-[120px] py-9.5 bg-[linear-gradient(185deg,_rgba(244,255,252,1)_71%,_rgba(57,188,147,0.84)_100%)]">
         <HomeDesktopNav />
         <section className="flex items-center flex-col  mt-[50px] md:mt-[75px]">
           <div className="w-auto border-[1px] border-[#DDDDDD] rounded-[32px] p-2 flex items-center justify-center gap-1.5">
@@ -88,9 +89,12 @@ const HomePage = () => {
             and signature
           </p>
           <div className="mt-[42px] flex flex-col md:flex-row items-center gap-5 md:gap-[42px]">
-            <button className=" text-[#EFFFFA] cursor-pointer font-semibold text-base bg-[#248567] rounded-[8px] py-4 px-6 drop-shadow-sm drop-shadow-black/10">
+            <Link
+              href="/dashboard"
+              className=" text-[#EFFFFA] cursor-pointer font-semibold text-base bg-[#248567] rounded-[8px] py-4 px-6 drop-shadow-sm drop-shadow-black/10"
+            >
               Generate Invoice
-            </button>
+            </Link>
             <button className="w-[170px] text-[#248567] cursor-pointer font-semibold py-4 px-6 text-base border-[#248567] border-[1px] rounded-[8px] drop-shadow-sm drop-shadow-[#00140E1A]/10">
               Sign Up
             </button>
@@ -106,7 +110,7 @@ const HomePage = () => {
         </section>
       </header>
       <main className="">
-        <section className="bg-[#FDFDFD] w-full px-5 py-10 md:py-0 md:px-0 md:p-[120px]">
+        <section className="bg-[#FDFDFD] w-full px-5 py-10 md:px-[20] md:py-[120px] lg:px-[120px] ">
           <h1 className=" text-2xl md:text-[42px] font-bold text-center text-[#444444] leading-7 md:leading-12">
             Built For Every <br /> Business and Services
           </h1>
@@ -122,7 +126,7 @@ const HomePage = () => {
           </div>
         </section>
         <section className="flex flex-col md:flex-row items-start w-full ">
-          <div className="bg-[#248567] md:h-[740px] w-full md:w-[50%] px-5 py-10 md:py-0 md:px-0 md:p-[112px]">
+          <div className="bg-[#248567] md:h-[740px] w-full md:w-[50%] px-5 py-10 md:py-[112px] md:px-[20px] lg:px-[112px] ">
             <h1 className="text-[#EFEFEF] font-bold text-2xl md:text-5xl leading-10 md:leading-18">
               Works for All Types of <br /> Business.{" "}
             </h1>
@@ -137,9 +141,12 @@ const HomePage = () => {
               <li>Service provider</li>
               <li>Small business</li>
             </ul>
-            <button className="text-[#248567] cursor-pointer shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] font-semibold text-base bg-white py-4 px-6 rounded-[8px] mt-[67px]">
+            <Link
+              href="/dashboard"
+              className="text-[#248567] cursor-pointer shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] font-semibold text-base bg-white py-4 px-6 rounded-[8px] mt-[67px]"
+            >
               Generate Invoice
-            </button>
+            </Link>
           </div>
           <div
             style={{
@@ -151,17 +158,17 @@ const HomePage = () => {
             className="w-full h-[400px] md:w-[50%] md:h-[740px] "
           ></div>
         </section>
-        <section className="bg-[#FDFDFD] flex flex-col md:flex-row items-center justify-between px-5  md:px-[120px] py-[79px] ">
-          <div className="bg-[#248567] relative rounded-[32px] w-full h-[400px] md:h-[620px] md:w-[620px]">
-            <Image
-              src="\image\image-2.svg"
-              alt="image"
-              width={0}
-              height={0}
-              className="w-full h-[400px] md:w-[620px] md:h-[620px] mt-[-23px] ml-[25px] absolute"
-            />
-          </div>
-          <div className="flex flex-col items-center md:flex-row md:items-start mt-10 md:mt-0">
+        <section className="bg-[#FDFDFD] flex flex-col md:gap-9 md:flex-row   lg:gap-0 items-center justify-between px-5 lg:px-[120px] py-[79px] ">
+         <div className="w-[50%] h-[400px] md:h-[600px]">
+           <Image
+            src="\image\image-14.svg"
+            alt="image"
+            width={0}
+            height={0}
+            className=" object-center object-contain w-full  h-full "
+          />
+         </div>
+          <div className=" flex flex-col items-center  md:items-start mt-10 md:mt-0">
             <h1 className="text-center md:text-start ext-[#444444]  font-bold text-2xl md:text-5xl leading-8 md:leading-14">
               Trusted by <br /> Freelancers, SME’s <br /> and Businesses across{" "}
               Nigeria.
@@ -170,12 +177,15 @@ const HomePage = () => {
               JustInvoice caters for all services. You can <br /> generate as
               professional invoices and receipts for you clients in an instant.
             </p>
-            <button className="text-[#EFFFFA] cursor-pointer shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] font-semibold text-base bg-[#248567] py-4 px-6 rounded-[8px] mt-10 md:mt-[67px]">
+            <Link
+              href="/dashboard"
+              className="text-[#EFFFFA] cursor-pointer shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] font-semibold text-base bg-[#248567] py-4 px-6 rounded-[8px] mt-10 lg:mt-[67px]"
+            >
               Generate Invoice
-            </button>
+            </Link>
           </div>
         </section>
-        <section className="bg-[#FDFDFD] w-full  md:pl-[120px] px-5 py-10 md:py-[120px]">
+        <section className="bg-[#FDFDFD] md:mt-20 lg:mt-0 w-full  md:pl-[120px] px-5 py-10 md:py-[60px] lg:py-[120px]">
           <h1 className="font-bold text-[48px] text-[#242424] text-center">
             Who It Is For.
           </h1>
@@ -185,8 +195,8 @@ const HomePage = () => {
           </p>
           <SliderCard_1 />
         </section>
-        <section className="flex flex-col md:flex-row justify-between md:h-[1060px] items-start bg-[#EBFFF9] mt-[40px]  ">
-          <div className="flex flex-col items-center bg-[#248567] py-10 md:py-0 md:px-0 md:pr-[80px] w-full md:w-auto h-full md:pl-[120px] md:pt-[90px]">
+        <section className="flex flex-col md:flex-row justify-between md:h-[1200px] lg:h-[1060px] items-start bg-[#EBFFF9] mt-[40px]  ">
+          <div className="flex flex-col items-center md:items-start bg-[#248567] py-10 md:py-0 md:px-5 lg:px-0 lg:pr-[80px] w-full md:w-auto h-full lg:pl-[120px] md:pt-[90px]">
             <h1 className="text-center md:text-start text-[#F0F0F0] font-bold text-2xl md:text-5xl md:leading-16">
               Frequently <br /> Asked <br /> Questions{" "}
             </h1>
@@ -199,7 +209,7 @@ const HomePage = () => {
               View All
             </button>
           </div>
-          <div className=" md:w-[65%] md:pr-[120px] px-5 md:px-0 pt-[90px] pb-[50px] flex flex-col ">
+          <div className=" md:w-[65%] lg:pr-[120px] md:px-5  px-5 lg:px-0 pt-[90px] pb-[50px] flex flex-col">
             {faq_data.map((item) => (
               <FaqAccordion
                 key={item.id}
@@ -212,7 +222,7 @@ const HomePage = () => {
             ))}
           </div>
         </section>
-        <section className=" px-5 md:px-[120px] py-[90px] bg-[#FDFDFD]">
+        <section className=" px-5 md:px-5 lg:px-[120px] py-[90px] bg-[#FDFDFD]">
           <h1 className="text-[#242424] font-bold text-2xl md:text-5xl text-center">
             What Our Users <br /> Are Saying
           </h1>
@@ -231,11 +241,14 @@ const HomePage = () => {
           <p className="text-[#EAEAEA] font-normal text-base md:text-xl">
             Start invoicing today
           </p>
-          <button className="cursor-pointer py-[16px] px-[24px] mt-4 rounded-[8px] bg-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] text-[#248567]">
+          <Link
+            href="/dashboard"
+            className="cursor-pointer py-[16px] px-[24px] mt-4 rounded-[8px] bg-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] text-[#248567]"
+          >
             Generate Invoice
-          </button>
+          </Link>
         </section>
-        <section className="bg-[#0C0C0C] mt-[60px] px-5 py-[50px] md:px-0 md:py-0 md:p-[68px]">
+        <section className="bg-[#0C0C0C] mt-[60px] px-5 py-[50px] lg:px-[68px] md:py-[68px] ">
           <div className="w-full flex flex-col md:flex-row items-start justify-between">
             <div>
               <div className="flex gap-[10px] items-center">

@@ -95,9 +95,12 @@ const HomePage = () => {
             >
               Generate Invoice
             </Link>
-            <button className="w-[170px] text-[#248567] cursor-pointer font-semibold py-4 px-6 text-base border-[#248567] border-[1px] rounded-[8px] drop-shadow-sm drop-shadow-[#00140E1A]/10">
+            <Link
+              href="auth/signup"
+              className="w-[170px] text-[#248567] cursor-pointer font-semibold py-4 px-6 text-base border-[#248567] border-[1px] rounded-[8px] drop-shadow-sm drop-shadow-[#00140E1A]/10"
+            >
               Sign Up
-            </button>
+            </Link>
           </div>
           <div className="mt-[36px]">
             <Image
@@ -159,15 +162,15 @@ const HomePage = () => {
           ></div>
         </section>
         <section className="bg-[#FDFDFD] flex flex-col md:gap-9 md:flex-row   lg:gap-0 items-center justify-between px-5 lg:px-[120px] py-[79px] ">
-         <div className="w-[50%] h-[400px] md:h-[600px]">
-           <Image
-            src="\image\image-14.svg"
-            alt="image"
-            width={0}
-            height={0}
-            className=" object-center object-contain w-full  h-full "
-          />
-         </div>
+          <div className="w-[50%] h-[400px] md:h-[600px]">
+            <Image
+              src="\image\image-14.svg"
+              alt="image"
+              width={0}
+              height={0}
+              className=" object-center object-contain w-full  h-full "
+            />
+          </div>
           <div className=" flex flex-col items-center  md:items-start mt-10 md:mt-0">
             <h1 className="text-center md:text-start ext-[#444444]  font-bold text-2xl md:text-5xl leading-8 md:leading-14">
               Trusted by <br /> Freelancers, SME’s <br /> and Businesses across{" "}

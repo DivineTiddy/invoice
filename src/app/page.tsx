@@ -2,7 +2,7 @@ import HomePage from "@/components/home-page/HomePage";
 
 export default function Home() {
   return (
-    <div className="overflow-hidden ">
+    <div style={{ zoom: 0.8 }} className="overflow-hidden ">
       <HomePage />
     </div>
   );

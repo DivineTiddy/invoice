@@ -21,7 +21,7 @@ export function SelectDropdown() {
       <SelectTrigger className=" cursor-pointer flex justify-between items-center w-[300px] outline-0 font-normal text-base text-[#A7A7A7] bg-[#FDFDFD] rounded-[8px] py-5.5 px-4.5 border-[1px] border-[#E4E4E4] focus:border-[#248567]">
         <SelectValue />
       </SelectTrigger>
-      <SelectContent className=" -bottom-20 left-24 font-normal text-base text-[#242424]  bg-[#FDFDFD] ">
+      <SelectContent className="  font-normal text-base text-[#242424]  bg-[#FDFDFD] ">
         <SelectGroup>
           <SelectItem  value="Naira">
             {" "}

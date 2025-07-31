@@ -26,18 +26,18 @@ const MobileSideNav = () => {
       <SheetTrigger className="cursor-pointer">
         <Image src="/icon/menu-burger.svg" alt="icon" width={34} height={34} />
       </SheetTrigger>
-      <SheetContent className="bg-transparent border-0 w-full p-0 px-0 md:hidden">
+      <SheetContent className="bg-transparent border-0 w-full p-0 px-0 lg:hidden">
         <SheetHeader className="border-0">
           <SheetTitle className="w-full px-4 flex justify-between items-center bg-[#F9FFFD] drop-shadow-lg py-3">
             <div className="flex gap-[10px] items-center">
               <Image
                 src="/image/logo.svg"
                 alt="image"
-                className="w-[35px] h-[35px] md:w-[50px] md:h-[50px]"
+                className="w-[35px] h-[35px] lg:w-[50px] lg:h-[50px]"
                 width={0}
                 height={0}
               />
-              <h2 className="font-bold text-lg md:text-2xl text-[#248567] font-sans">
+              <h2 className="font-bold text-lg lg:text-2xl text-[#248567] font-sans">
                 JUSTINVOICE
               </h2>
             </div>
@@ -52,7 +52,7 @@ const MobileSideNav = () => {
               </button>
             </SheetClose>
           </SheetTitle>
-          <SheetDescription className="w-[60%] h-screen bg-[#FDFDFD] p-4 -mt-1.5">
+          <SheetDescription className="w-full h-screen bg-[#FDFDFD] p-4 -mt-1.5">
             <RouteLink
               href="/dashboard"
               src="/icon/tabler.svg"

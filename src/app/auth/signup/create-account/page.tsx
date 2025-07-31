@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="w-full h-screen lg:h-auto px-3 md:px-0 py-10 md:py-20 flex justify-center  items-center bg-[#F2F2F2]">
+    <div className="w-full h-full lg:h-auto px-3 md:px-0 py-10 md:py-20 flex justify-center  items-center bg-[#F2F2F2]">
       <section className="w-full md:w-3/5 lg:w-2/5">
     <BackButton/>
         <div className="w-full md:mt-5 md:w-auto space-y-6 bg-[#FDFDFD] drop-shadow-lg py-10 px-4 md:px-8 rounded-2xl">

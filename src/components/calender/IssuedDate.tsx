@@ -46,7 +46,7 @@ export const IssuedDate: React.FC<ProductTableProps> = ({ setInvioceData }) => {
         </PopoverTrigger>
         <PopoverContent
           align="start"
-          className="text-base text-[#242424] absolute bottom-1 left-24"
+          className="text-base text-[#242424] absolute "
         >
           <Calendar
             mode="single"

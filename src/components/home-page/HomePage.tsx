@@ -97,7 +97,7 @@ const HomePage = () => {
             </Link>
             <Link
               href="auth/signup"
-              className="w-[170px] text-[#248567] cursor-pointer font-semibold py-4 px-6 text-base border-[#248567] border-[1px] rounded-[8px] drop-shadow-sm drop-shadow-[#00140E1A]/10"
+              className="w-[170px] text-[#248567] text-center cursor-pointer font-semibold py-4 px-6 text-base border-[#248567] border-[1px] rounded-[8px] drop-shadow-sm drop-shadow-[#00140E1A]/10"
             >
               Sign Up
             </Link>
@@ -128,8 +128,8 @@ const HomePage = () => {
             ))}
           </div>
         </section>
-        <section className="flex flex-col md:flex-row items-start w-full ">
-          <div className="bg-[#248567] md:h-[740px] w-full md:w-[50%] px-5 py-10 md:py-[112px] md:px-[20px] lg:px-[112px] ">
+        <section className="flex flex-col  md:flex-row items-start w-full ">
+          <div className="bg-[#248567] space-y-10 md:space-y-0 md:h-[740px] w-full md:w-[50%] px-5 py-10 md:py-[112px] md:px-[20px] lg:px-[112px] ">
             <h1 className="text-[#EFEFEF] font-bold text-2xl md:text-5xl leading-10 md:leading-18">
               Works for All Types of <br /> Business.{" "}
             </h1>
@@ -137,7 +137,7 @@ const HomePage = () => {
               Whatever business or services you provide, you <br />
               can invoice your client like a pro
             </p>
-            <ul className="mt-[39px] px-6 space-y-4 text-[#DFDFDF] font-normal text-base list-[disc] list-outside">
+            <ul className="mt-[3px] px-6 space-y-4 text-[#DFDFDF] font-normal text-base list-[disc] list-outside">
               <li>Freelancers</li>
               <li>Online seller</li>
               <li>Contractor</li>
@@ -146,7 +146,7 @@ const HomePage = () => {
             </ul>
             <Link
               href="/dashboard"
-              className="text-[#248567] cursor-pointer shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] font-semibold text-base bg-white py-4 px-6 rounded-[8px] mt-[67px]"
+              className="text-[#248567]  md:mt-0 cursor-pointer shadow-[0_4px_6px_-1px_rgba(0,0,0,0.25)] font-semibold text-base bg-white py-4 px-6 rounded-[8px] mt-[67px]"
             >
               Generate Invoice
             </Link>
@@ -162,7 +162,7 @@ const HomePage = () => {
           ></div>
         </section>
         <section className="bg-[#FDFDFD] flex flex-col md:gap-9 md:flex-row   lg:gap-0 items-center justify-between px-5 lg:px-[120px] py-[79px] ">
-          <div className="w-[50%] h-[400px] md:h-[600px]">
+          <div className="w-full md:w-[50%] h-[400px] md:h-[600px]">
             <Image
               src="\image\image-14.svg"
               alt="image"
@@ -171,7 +171,7 @@ const HomePage = () => {
               className=" object-center object-contain w-full  h-full "
             />
           </div>
-          <div className=" flex flex-col items-center  md:items-start mt-10 md:mt-0">
+          <div className=" flex flex-col items-center md:w-[40%]  md:items-start mt-10 md:mt-0">
             <h1 className="text-center md:text-start ext-[#444444]  font-bold text-2xl md:text-5xl leading-8 md:leading-14">
               Trusted by <br /> Freelancers, SME’s <br /> and Businesses across{" "}
               Nigeria.

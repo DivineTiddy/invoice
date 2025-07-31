@@ -296,7 +296,7 @@ const Index = () => {
           </button>
 
           {/* Save draft without submission */}
-          <button className="bg-[#EFEFEF] cursor-pointer  py-4 px-6 rounded-[8px] text-[#444444] font-semibold text-base">
+          <button className="bg-[#EFEFEF] cursor-pointer  py-4 px-3 rounded-[8px] text-[#444444] font-semibold text-base">
             Save as draft
           </button>
 

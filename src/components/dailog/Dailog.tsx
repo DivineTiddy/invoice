@@ -3,6 +3,7 @@ import {
   DialogContent,
   DialogTrigger,
   DialogTitle,
+  DialogClose,
 } from "@/components/ui/dialog";
 import Image from "next/image";
 import {
@@ -18,13 +19,23 @@ export function PreviewDailog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="bg-[#248567] cursor-pointer py-4 px-6 rounded-[8px] text-[#EFFFFA] font-semibold text-base">
+        <button className="bg-[#248567] cursor-pointer py-4 px-3 rounded-[8px] text-[#EFFFFA] font-semibold text-base">
           Generate Invoice
         </button>
       </DialogTrigger>
-      <DialogContent className="md:w-[50%] text-[#444444] h-[700px] px-3 md:px-[63px] py-[43px] overflow-auto">
-        <div className="mt-[20px]">
-          <section className="w-full flex justify-between item-center">
+      <DialogContent className=" md:w-[50%] text-[#444444] h-[700px] px-5 md:px-[63px] py-[23px] overflow-auto">
+        <div className="w-full flex justify-end border-b-1 border-gray-300 py-3 ">
+          <DialogClose className="cursor-pointer">
+            <Image
+              src="/icon/closeIcon.svg"
+              alt="icon"
+              width={24}
+              height={24}
+            />
+          </DialogClose>
+        </div>
+        <div className="mt-[5px]">
+          <section className="w-full flex justify-between gap-10 md:gap-0 item-center">
             <div>
               <Image
                 src="\image\image-13.svg"
@@ -96,7 +107,7 @@ export function PreviewDailog() {
                 <TableRow className="mt-[20px] px-2 py-4  font-normal text-sm md:text-base ">
                   <TableCell>
                     {" "}
-                    <p className="w-[180px] py-2 md:w-auto overflow-x-auto">
+                    <p className=" py-2 md:w-auto overflow-x-auto">
                       Full Website Design and prototype
                     </p>
                   </TableCell>
@@ -126,15 +137,21 @@ export function PreviewDailog() {
             <div className="space-y-2">
               <span className="flex items-center gap-6 justify-between">
                 <Text>Subtotal</Text>
-                <p className="text-[#282828] font-normal  text-sm md:text-base">N1000.00</p>
+                <p className="text-[#282828] font-normal  text-sm md:text-base">
+                  N1000.00
+                </p>
               </span>
               <span className="flex items-center gap-6 justify-between">
                 <Text>Discount</Text>
-                <p className="text-[#282828] font-normal  text-sm md:text-base">0.00</p>
+                <p className="text-[#282828] font-normal  text-sm md:text-base">
+                  0.00
+                </p>
               </span>
               <span className="flex items-center gap-6 justify-between">
                 <Text>Amount Paid</Text>
-                <p className="text-[#282828] font-normal  text-sm md:text-base">0.00</p>
+                <p className="text-[#282828] font-normal  text-sm md:text-base">
+                  0.00
+                </p>
               </span>
               <span className="bg-[#248567] text-[#EAEAEA] p-2 flex items-center gap-6 justify-between ">
                 <p className=" font-bold text-sm md:text-base">Balance Due</p>
@@ -153,10 +170,10 @@ export function PreviewDailog() {
               height={40}
               className="cursor-pointer hidden md:block"
             />
-            <button className="bg-[#EFEFEF] cursor-pointer py-4 px-6 rounded-[8px]  font-semibold text-[15px]">
+            <button className="bg-[#EFEFEF] cursor-pointer py-4 px-4 rounded-[8px]  font-semibold text-[15px]">
               Send as Email
             </button>
-            <button className="bg-[#248567] cursor-pointer py-4 px-6 rounded-[8px] text-[#EFFFFA] font-semibold text-[15px]">
+            <button className="bg-[#248567] cursor-pointer py-4 px-4 rounded-[8px] text-[#EFFFFA] font-semibold text-[15px]">
               Download as PDF
             </button>
           </section>
